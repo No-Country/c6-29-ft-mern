@@ -30,7 +30,7 @@ const UsuarioSchema = Schema({
         }
     },
     articulos_id:  [{ObjectId}], 
-    favoritos_id: [{ObjectId}]
+    favoritos_id: [{ObjectId}],
     feria: {
         nombre:{type: String},
         ubicacionReal: {type: String},
