@@ -1,5 +1,7 @@
+const mongoose =require('mongoose');
 const {Schema, model} = require('mongoose');
-
+var schema = mongoose.Schema,
+    ObjectId = schema.ObjectId;
 const UsuarioSchema = Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
@@ -27,8 +29,8 @@ const UsuarioSchema = Schema({
             longitud: {type: Number}, 
         }
     },
-    articulos_id:  [{ type : Number, ref: 'articulos'}], //FALTA CORREGIR
-    favoritos_id: [{ type : Number, ref: 'articulos'}], //FALTA CORREGIR
+    articulos_id:  [{ObjectId}], 
+    favoritos_id: [{ObjectId}]
     feria: {
         nombre:{type: String},
         ubicacionReal: {type: String},
