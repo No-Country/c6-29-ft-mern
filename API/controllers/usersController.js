@@ -125,7 +125,25 @@ module.exports ={
   },
 
 
-  articulosuser: async (req,res,next) => {},
+  articulosuser: async (req,res,next) => {
+
+    const {usuario} = req.query;
+    console.log(usuario)
+    try {
+      const usuarioFav = await Usuarios.findById(usuario);
+      const articulos = usuarioFav.articulos_id;
+      console.log(usuarioFav)
+      res.status(200).json({
+        articulos
+      })
+
+    } catch (error) {
+      res.status(400).json({
+        error
+      })
+    }
+
+  },
 
   buscaNombre: async (req,res,next) => {},
 
