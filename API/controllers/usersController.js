@@ -10,14 +10,34 @@ module.exports ={
   },
 
   getOne:async (req,res,next) =>{
-    res.status(201).json({
-      msg: 'get one'
-    })
+
+    const {id} = req.params;
+
+    try {
+      const usuario = await Usuarios.findById(id);
+
+      if(usuario){
+        res.status(201).json({
+          usuario
+        })
+      }else{
+        res.status(400).json({
+          msg: `El usuario con el id ${id} no existe`
+        })
+      }
+      
+    } catch (error) {
+      return res.status(400).json({
+        error
+      })
+    }
+
+    
+
   },
 
   create: async (req,res,next) =>{
-    
-    const  user  = new Usuarios({
+    const user = new Usuarios({
       username:req.body.username,
       password:req.body.password,
       email:req.body.email,
