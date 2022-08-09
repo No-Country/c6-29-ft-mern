@@ -53,9 +53,10 @@ module.exports ={
         }
       },
       update: async function(req,res,next){
-        console.log(req.params.id);
+        const {id} = req.params; 
         try {
-          const document = await articulos.updateOne({_id:req.params.id},req.body);
+        const {_id, contacto,valoracion, ...resto} = req.body;
+          const document = await articulos.updateOne(id,resto);
           res.status(200).json(document)
         } catch (error) {
           console.log(error);
