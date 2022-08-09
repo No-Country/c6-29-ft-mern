@@ -4,12 +4,23 @@ const Usuarios = require('../modelos/usuarios');
 module.exports ={
 
   get: async (req,res,next) =>{
-    console.log('get all')
+
+    const {limite = 10, desde = 0} = req.query;
+
     try {
-      const usuarios = await Usuarios.find({});
+
+      const [total, usuarios] = await Promise.all([
+        Usuarios.countDocuments({}),
+        Usuarios.find({})
+        .skip(Number(desde))
+        .limit(Number(limite))
+      ]);
+
       res.status(201).json({
-        usuarios : usuarios
+        total,
+        usuarios
       })
+      
     } catch (error) {
       res.status(400).json({
         error
