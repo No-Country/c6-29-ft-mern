@@ -29,7 +29,7 @@ const ArticulosSchema = Schema({
         type:String,
         emun: ['ACTIVO', 'PAUSADO', 'FINALIZADO'],
         default: 'ACTIVO'},
-    valoracion:{type:Number}
+    valoracion:{type:Number, default: 0}
 })
 
 module.exports = model('Articulos', ArticulosSchema);
