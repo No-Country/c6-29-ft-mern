@@ -4,9 +4,17 @@ const Usuarios = require('../modelos/usuarios');
 module.exports ={
 
   get: async (req,res,next) =>{
-    res.status(201).json({
-      msg: 'get all'
-    })
+    console.log('get all')
+    try {
+      const usuarios = await Usuarios.find({});
+      res.status(201).json({
+        usuarios : usuarios
+      })
+    } catch (error) {
+      res.status(400).json({
+        error
+      })
+    }
   },
 
   getOne:async (req,res,next) =>{
@@ -25,9 +33,9 @@ module.exports ={
           msg: `El usuario con el id ${id} no existe`
         })
       }
-      
+
     } catch (error) {
-      return res.status(400).json({
+      res.status(400).json({
         error
       })
     }
