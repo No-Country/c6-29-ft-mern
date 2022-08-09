@@ -19,11 +19,11 @@ const UsuarioSchema = Schema({
     },
     avatar: {type : String},
     contacto: {
-        nombre: {type: String, required: true}, 
-        apellido: {type: String, required: true}, 
-        telefono: {type: String, required: true}, 
-        email: {type: String, required: true}, 
-        direccion: {type: String, required: true},
+        nombre: {type: String}, 
+        apellido: {type: String}, 
+        telefono: {type: String}, 
+        email: {type: String}, 
+        direccion: {type: String},
         coordenadas: {
             latitud: {type: Number},
             longitud: {type: Number}, 
