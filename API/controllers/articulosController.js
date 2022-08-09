@@ -70,6 +70,11 @@ module.exports ={
           console.log(error);
 
         }
-      
-      }
+      },
+
+      getRecientes: async () => {},
+      favoritos: async () => {},
+      localizar: async () => {},
+      articulosuser: async () => {},
+
 }
