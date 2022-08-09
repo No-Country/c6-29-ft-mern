@@ -90,6 +90,7 @@ module.exports ={
     res.status(201).json({
       msg: 'delete'
     })
-  }
+  },
+  articulosuser: async () => {},
 }
 

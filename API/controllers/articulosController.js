@@ -76,6 +76,6 @@ module.exports ={
       getRecientes: async () => {},
       favoritos: async () => {},
       localizar: async () => {},
-      articulosuser: async () => {},
+      
 
 }
