@@ -8,6 +8,19 @@ module.exports ={
           console.log(error);
         }
       },
+      getnombre: async function(req,res,next){
+        try {
+             let queryFind={}
+          if(req.query.buscar){
+            queryFind = {nombreArticulo:{$regex:".*"+req.query.buscar+".*",$options:"i"}}
+          }
+          const articuloNombre = await articulos.find(queryFind)
+          res.status(200).json(articuloNombre)
+        } catch (error) {
+            console.log(error);
+        }
+
+      },
       create: async function(req,res,next){
         try {
         const articulo = new articulos({
