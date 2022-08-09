@@ -21,11 +21,14 @@ const ArticulosSchema = Schema({
         type : String,
         default: 'USADO'
     },
-    precio:{type:String},
+    precio:{type:String, default:0},
     ubicacion:{
         latitud: {type: Number},
-        longitud: {type: Number} },
-    estado:{type:String},
+        longitud: {type: Number}},
+    estado:{
+        type:String,
+        emun: ['ACTIVO', 'PAUSADO', 'FINALIZADO'],
+        default: 'ACTIVO'},
     valoracion:{type:Number}
 })
 
