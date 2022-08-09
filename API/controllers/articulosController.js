@@ -2,15 +2,15 @@ const articulos = require('../modelos/articulos');
 module.exports ={
     getAll: async function(req, res, next) {
         try {
-          const products = await articulos.find()
-          res.status(200).json(products)
+          const articulosAll = await articulos.find()
+          res.status(200).json(articulosAll)
         } catch (error) {
           console.log(error);
         }
       },
       create: async function(req,res,next){
         try {
-        const producto = new articulos({
+        const articulo = new articulos({
             contacto: req.body.contacto,
             nombreArticulo: req.body.nombreArticulo,
             fechaCreacion: req.body.fechaCreacion,
@@ -23,7 +23,7 @@ module.exports ={
             estado: req.body.estado,
             valoracion: req.body.valoracion
         })  
-        const document = await articulos.save()
+        const document = await articulo.save()
         console.log(req.body);
         res.status(201).json(document)  
       } catch (error) {
@@ -33,8 +33,8 @@ module.exports ={
       getById: async function(req,res,next){
         console.log(req.params.id);
         try {
-          const product = await articulos.findById(req.params.id)        
-          res.status(200).json(product)
+          const articulo = await articulos.findById(req.params.id)        
+          res.status(200).json(articulo)
         } catch (error) {
           console.log(error);
         }
@@ -55,6 +55,7 @@ module.exports ={
           res.status(200).json(document)
         } catch (error) {
           console.log(error);
+
         }
       
       }
