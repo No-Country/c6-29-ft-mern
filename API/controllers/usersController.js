@@ -80,35 +80,48 @@ module.exports ={
       }
     },
 
-    update: async (req,res,next) =>{
+  update: async (req,res,next) =>{
 
-      const {id} = req.params;
-  
-      const {
-              _id, 
-              password, 
-              google,
-              emailValidado,
-              rol,
-              __v,
-                ...resto} = req.body;
-  
-      try {
-        const usuarioModificado = await Usuarios.findByIdAndUpdate(id, resto);
-        res.status(201).json({
-          usuarioModificado
-        })
-      } catch (error) {
-        res.status(400).json({
-          error
-        })
-      }
-    },
+    const {id} = req.params;
+
+    const {
+            _id, 
+            password, 
+            google,
+            emailValidado,
+            rol,
+            __v,
+              ...resto} = req.body;
+
+    try {
+      const usuarioModificado = await Usuarios.findByIdAndUpdate(id, resto);
+      res.status(201).json({
+        usuarioModificado
+      })
+    } catch (error) {
+      res.status(400).json({
+        error
+      })
+    }
+  },
 
   delete: async (req,res,next) =>{
-    res.status(201).json({
-      msg: 'delete'
-    })
+
+    const {id} = req.params;
+
+    try {
+      await Usuarios.findByIdAndDelete(id);
+
+      // ¡¡¡FALTA ELIMINAR TODOS LOS ARTICULOS DEL USUARIO!!! 
+
+      res.status(201).json({
+        msg: 'ok'
+      })
+    } catch (error) {
+      res.status(400).json({
+        error
+      })
+    }
   },
 
 
