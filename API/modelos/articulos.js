@@ -1,6 +1,5 @@
-const {Schema, model} = require('mongoose');
-
-const ArticulosSchema = Schema({
+const mongoose = require('mongoose');
+const ArticulosSchema = mongoose.Schema({
     contacto: {
         nombre: {type: String, required: true}, 
         apellido: {type: String, required: true}, 
@@ -30,6 +29,7 @@ const ArticulosSchema = Schema({
         emun: ['ACTIVO', 'PAUSADO', 'FINALIZADO'],
         default: 'ACTIVO'},
     valoracion:{type:Number, default: 0}
+    
 })
 
-module.exports = model('Articulos', ArticulosSchema);
+module.exports = mongoose.model('Articulos', ArticulosSchema);
