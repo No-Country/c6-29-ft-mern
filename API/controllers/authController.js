@@ -121,12 +121,12 @@ const authController = {
                             from: userExists.from,
                         }
                         await userExists.save()
-                        const token = jwt.sign({...userData}, process.env.SECRET_KEY,{expiresIn:60*60*24})
+                        const token = jwt.sign({usuario:usuario._id}, process.env.SECRET_KEY,{expiresIn:60*60*24})
                         res.json({
                             success: true, 
                             from: from, 
                             response: {token, userData}, 
-                            message: "Welcome back "+userData.userFirstname
+                            message: "Welcome back "
                         })
                     }
                     else{
