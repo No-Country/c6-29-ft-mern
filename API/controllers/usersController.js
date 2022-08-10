@@ -128,11 +128,11 @@ module.exports ={
   articulosuser: async (req,res,next) => {
 
     const {usuario} = req.query;
-    console.log(usuario)
+
     try {
-      const usuarioFav = await Usuarios.findById(usuario);
-      const articulos = usuarioFav.articulos_id;
-      console.log(usuarioFav)
+      const usuarioArticulos = await Usuarios.findById(usuario);
+      const articulos = usuarioArticulos.articulos_id;
+
       res.status(200).json({
         articulos
       })
@@ -145,11 +145,36 @@ module.exports ={
 
   },
 
-  buscaNombre: async (req,res,next) => {},
+  buscaNombre: async (req,res,next) => {
+
+    let queryFind={};
+    const buscar = req.query.buscar;
+
+    try {
+      if(buscar){
+        queryFind = {
+                      'contacto.nombre':{$regex:".*"+buscar+".*",$options:"i"}
+                    }
+      }
+
+      const usuarios = await Usuarios.find(queryFind)
+
+      res.status(200).json({
+        usuarios
+      })
+
+    } catch (error) {
+      res.status(200).json({
+        error
+      })
+    }
+
+  },
 
   favoritos: async (req,res,next) => {
+
     const {usuario} = req.query;
-    console.log(usuario)
+
     try {
       const usuarioFav = await Usuarios.findById(usuario);
       const favoritos = usuarioFav.favoritos_id;
@@ -168,4 +193,7 @@ module.exports ={
   },
 
 }
+
+
+
 
