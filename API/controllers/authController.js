@@ -144,7 +144,7 @@ const authController = {
                             userPhotoURL: userExists.userPhotoURL,
                             from: userExists.from,
                         }
-                        const token = jwt.sign({...userData},process.env.SECRET_KEY,{expiresIn:60*60*24})
+                        const token = jwt.sign({usuario:usuario._id},process.env.SECRET_KEY,{expiresIn:60*60*24})
                         res.json({
                             success: true, 
                             from: from, 
