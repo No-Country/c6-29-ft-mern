@@ -1,4 +1,5 @@
 const {Schema, model} = require('mongoose'); 
+const mongoosePaginate = require('mongoose-paginate-v2');
 const ArticulosSchema = Schema({
     contacto: {
         nombre: {type: String, required: true}, 
@@ -30,4 +31,5 @@ const ArticulosSchema = Schema({
         default: 'ACTIVO'},
     valoracion:{type:Number, default: 0}
 })
+ArticulosSchema.plugin(mongoosePaginate)
 module.exports = model('Articulos', ArticulosSchema);

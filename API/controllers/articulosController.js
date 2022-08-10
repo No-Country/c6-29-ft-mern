@@ -2,7 +2,7 @@ const articulos = require('../modelos/articulos');
 module.exports ={
     getAll: async function(req, res, next) {
         try {
-          const articulosAll = await articulos.find()
+          const articulosAll = await articulos.paginate({limit:4})
           res.status(200).json(articulosAll)
         } catch (error) {
           console.log(error);
