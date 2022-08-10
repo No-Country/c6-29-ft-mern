@@ -74,16 +74,24 @@ module.exports ={
       },
 
       getRecientes: async function(req,res,next){
-        const f = new Date()
-        console.log(f);
-        const fechaInicial = req.body.fechaCreacion;
-        const fechaFinal = fechaInicial.substring(0,8).concat(Number(fechaInicial.substring(8)) + 1);
+        const fechaActual = new Date();
+        const ultimoMes = new Date(fechaActual.setMonth(fechaActual.getMonth() - 1)); 
+
         try {
-            const articulodate = await articulos.find({$and: [{f: {$gte: new Date(fechaInicial)}},{fecha: {$lt: new Date(fechaFinal)}}]})
-            return res.status(200).json(articulodate) 
+
+          const articulosRecientes = await articulos.find({
+            fechaCreacion:{
+              $gte: ultimoMes,
+              $lt: Date()
+            },
+          })
+
+          res.status(200).json({articulosRecientes})
         } catch (error) {
-            console.log(error);
+          res.status(400).json({error})
         }
+
+       
       },
       favoritos: async () => {},
       localizar: async () => {},
