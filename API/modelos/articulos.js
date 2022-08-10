@@ -1,5 +1,4 @@
-const {Schema, model} = require('mongoose');
-
+const {Schema, model} = require('mongoose'); 
 const ArticulosSchema = Schema({
     contacto: {
         nombre: {type: String, required: true}, 
@@ -31,5 +30,4 @@ const ArticulosSchema = Schema({
         default: 'ACTIVO'},
     valoracion:{type:Number, default: 0}
 })
-
 module.exports = model('Articulos', ArticulosSchema);
