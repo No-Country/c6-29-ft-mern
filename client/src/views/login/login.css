@@ -26,6 +26,10 @@ body{
     width: 100%;
 }
 
+.login__logo-container img{
+    width: 55%;
+}
+
 .container__title{
     font-family: var(--primaryFont);
     font-size: 2em;
@@ -102,4 +106,5 @@ body{
 
 .crear-cuenta__link{
     color: #AEB5C2;
+    margin: 1em 0;
 }
