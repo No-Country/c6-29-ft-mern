@@ -44,5 +44,5 @@ const UsuarioSchema = Schema({
     },
 });
 
-ArticulosSchema.plugin(mongoosePaginate)
+UsuarioSchema.plugin(mongoosePaginate)
 module.exports = model('Usuario', UsuarioSchema);
