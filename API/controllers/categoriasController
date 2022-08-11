@@ -3,8 +3,8 @@ const categorias = require('../modelos/categorias');
 module.exports = {
     createCategorias: async function(req,res,next){
         try {
-        const categorias = new categorias({
-            nombre: req.body.nombre
+        const categoria = new categorias({
+            nombre:req.body.nombre
         })  
         const document = await categoria.save()
         res.status(201).json(document)  
@@ -14,8 +14,8 @@ module.exports = {
       },
     getCategorias: async (req,res,next) =>{
         try {
-          const categorias = await categorias.find()
-          res.status(201).json(categorias)
+          const categoria = await categorias.find()
+          res.status(201).json(categoria)
         } catch (error) {
           res.status(400).json(error)
         }
