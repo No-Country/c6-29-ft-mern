@@ -19,5 +19,16 @@ module.exports = {
         } catch (error) {
           res.status(400).json(error)
         }
+      },
+
+    getCategoria: async (req,res,next) =>{
+        const {id} = req.params;
+ 
+        try {
+          const categoria = await categorias.findById(id)
+          res.status(201).json(categoria)
+        } catch (error) {
+          res.status(400).json(error)
+        }
       }
     }
