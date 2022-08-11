@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Leckerli+One&display=swap');
+
+:root{
+    --primaryFont: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #FEFBF7;
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.login__logo-container{
+    background-color: #FAF3E7;
+    border-radius: 0 0 50% 50%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 3em;
+    justify-content: center;
+    width: 100%;
+}
+
+.container__title{
+    font-family: var(--primaryFont);
+    font-size: 2em;
+    margin: 2em auto;
+    text-align: center;
+    width: 80%;
+}
+
+.container__title span {
+    color: #912E1C;
+    font-family: 'Leckerli One', cursive;
+}
+
+.input__container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1.5em;
+    width: 80%;
+}
+
+.input-container__item{
+    background-color: #F8F8F8;
+    border: none;
+    border-radius: 2em;
+    font-family: var(--primaryFont);
+    padding: 1em;
+}
+
+.input-container__link{
+    color: #000000;
+    font-family: var(--primaryFont);
+    font-size: 0.8em;
+}
+
+.input-container__button{
+    background-color: #7B848F;
+    border: none;
+    border-radius: 24px;
+    color: white;
+    height: 50px;
+}
+
+.login__separador{
+    margin: 3em auto;
+    width: 80%;
+}
+
+.redes__container{
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.redes__item{
+    width: 40px ;
+}
+
+.redes__img-container{
+    display: flex;
+    width: 100%;
+}
+
+.redes__img-container img{
+    margin: 0 auto;
+}
+
+.login__crear-cuenta{
+    font-family: var(--primaryFont);
+    font-size: 0.8em;
+    margin: 2em;
+    text-align: center;
+}
+
+.crear-cuenta__link{
+    color: #AEB5C2;
+}
