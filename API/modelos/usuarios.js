@@ -1,4 +1,7 @@
 const mongoose =require('mongoose');
+
+const mongoosePaginate = require('mongoose-paginate-v2');
+
 const {Schema, model} = require('mongoose');
 var schema = mongoose.Schema,
     ObjectId = schema.ObjectId;
@@ -41,4 +44,5 @@ const UsuarioSchema = Schema({
     },
 });
 
+ArticulosSchema.plugin(mongoosePaginate)
 module.exports = model('Usuario', UsuarioSchema);
