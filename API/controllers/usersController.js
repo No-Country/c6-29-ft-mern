@@ -5,19 +5,11 @@ module.exports ={
 
   get: async (req,res,next) =>{
 
-    const {limite = 10, desde = 0} = req.query;
-
     try {
 
-      const [total, usuarios] = await Promise.all([
-        Usuarios.countDocuments({}),
-        Usuarios.find({})
-        .skip(Number(desde))
-        .limit(Number(limite))
-      ]);
+      const usuarios = await Usuarios.paginate({limit:4});
 
       res.status(201).json({
-        total,
         usuarios
       })
       
@@ -157,7 +149,7 @@ module.exports ={
                     }
       }
 
-      const usuarios = await Usuarios.find(queryFind)
+      const usuarios = await Usuarios.paginate(queryFind)
 
       res.status(200).json({
         usuarios
