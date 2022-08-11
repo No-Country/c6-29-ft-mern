@@ -11,7 +11,7 @@ body{
 .login__container{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     width: 100%;
 }
@@ -52,11 +52,16 @@ body{
 }
 
 .input-container__item{
-    background-color: #F8F8F8;
-    border: none;
+    background-color: transparent;
+    border: 2px solid #D8CEBD;
     border-radius: 2em;
     font-family: var(--primaryFont);
     padding: 1em;
+}
+
+.input-container__item:focus{
+    border: 2px solid #AD4A00;
+    outline: none;
 }
 
 .input-container__link{
@@ -66,7 +71,7 @@ body{
 }
 
 .input-container__button{
-    background-color: #7B848F;
+    background-color: #0F643B;
     border: none;
     border-radius: 24px;
     color: white;
@@ -81,6 +86,7 @@ body{
 .redes__container{
     display: flex;
     margin: 0 auto;
+    margin-bottom: 2em;
     width: 50%;
 }
 
