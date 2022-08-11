@@ -2,7 +2,7 @@ import Separador from "../../img/Separador.svg"
 import FacebookLogo from "../../img/facebook-logo.png"
 import GoogleLogo from "../../img/google-logo.png"
 import GsLogo from "../../img/gs-logo.png"
-import "../../styles/login-register.css"
+import "../../Styles/login-register.css"
 
 const Login = () => {
     return(

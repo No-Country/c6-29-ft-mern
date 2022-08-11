@@ -1,7 +1,8 @@
 import GsLogo from "../../img/gs-logo.png"
 import UserLogo from "../../img/user-logo.png"
 import Bars from "../../img/bars-menu.png"
-import "../../styles/header.css"
+import {Link} from 'react-router-dom';
+import "../../Styles/header.css"
 
 const Header = () => {
 
@@ -24,13 +25,12 @@ const Header = () => {
     
             <div class="nav-menu__container" data-nav-menu>
                 <ul class="container__list">
-                    <li class="list__items">Comprar</li>
+                    <li class="list__items"><Link to='/login'>login</Link></li>
                     <li class="list__items">Vender</li>
                     <li class="list__items">Donar</li>
                     <li class="list__items">Contacto</li>
                 </ul>
             </div>
-
         </div>
     )
 }
