@@ -2,7 +2,7 @@ const articulos = require('../modelos/articulos');
 module.exports ={
     getAll: async function(req, res, next) {
         try {
-          const articulosAll = await articulos.paginate({limit:4})
+          const articulosAll = await articulos.paginate({limit:4}).populate("categoria")
           res.status(200).json(articulosAll)
         } catch (error) {
           console.log(error);
@@ -29,7 +29,7 @@ module.exports ={
             fechaCreacion: req.body.fechaCreacion,
             imagen: req.body.imagen,
             descripcion: req.body.descripcion,
-            categoria: req.body.descripcion,
+            categoria: req.body.categoria,
             condicion: req.body.condicion,
             precio: req.body.precio,
             ubicacion: req.body.ubicacion,

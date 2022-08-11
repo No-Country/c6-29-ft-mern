@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose'); 
+const {Schema, model, default: mongoose} = require('mongoose'); 
 const mongoosePaginate = require('mongoose-paginate-v2');
 const ArticulosSchema = Schema({
     contacto: {
@@ -16,7 +16,10 @@ const ArticulosSchema = Schema({
     fechaCreacion: {type: Date},
     imagen:{type: Array},
     descripcion:{type: String},
-    categoria:{type:String},
+    categoria:{
+        type:mongoose.Schema.ObjectId,
+        ref:"categorias"
+    },
     condicion:{
         type : String,
         default: 'USADO'
