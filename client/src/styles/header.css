@@ -3,6 +3,7 @@
     display: flex;
     height: 60px;
     width: 100%;
+    z-index: 1000;
 }
 
 .header-container a{
@@ -37,6 +38,7 @@
     width: 100%;
     opacity: 0;
     transition: all 1s;
+    z-index: 1000;
 }
 
 .container__list{
@@ -45,12 +47,13 @@
     flex-direction: column;
     font-family: var(--secondaryFont);
     font-size: var(--primaryFont);
-    height: 100vh;
+    min-height: 100vh;
     list-style: none;
     text-align: center;
     padding-left: 0 ;
     padding-top: 1.2em;
     width: 100%;
+    
 }
 
 .list__items{
@@ -58,6 +61,7 @@
     padding: 1.5em;
     transition: all .5s;
     width: 100%;
+    z-index: 1000;
 }
 
 .list__items:nth-child(8){
