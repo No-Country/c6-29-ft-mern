@@ -63,3 +63,8 @@
     height: 6px;
     background-color: #ffff;
 }
+
+#buscador, #filtros{
+    z-index: -1;
+}
+

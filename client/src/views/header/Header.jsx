@@ -1,8 +1,22 @@
-import GsLogo from "../../img/gs-logo.png"
-import UserLogo from "../../img/user-logo.png"
-import Bars from "../../img/bars-menu.png"
+import GsLogo from "../../img/gs-logo.png";
+import UserLogo from "../../img/user-logo.png";
+import Bars from "../../img/bars-menu.png";
 import {Link} from 'react-router-dom';
-import "../../Styles/header.css"
+import "../../Styles/header.css";
+
+// ICONOS MENU HAMBURGUESA
+import HomeIcon from "../../img/burger-menu-icons/home-icon.svg";
+import HistoryIcon from "../../img/burger-menu-icons/history-icon.svg";
+import FavIcon from "../../img/burger-menu-icons/favorite-icon.svg";
+import NewsIcon from "../../img/burger-menu-icons/news-icon.svg";
+import OffersIcon from "../../img/burger-menu-icons/offers-icon.svg";
+import DonacionesIcon from "../../img/burger-menu-icons/donaciones-icon.svg";
+import VendedoresCercaIcon from "../../img/burger-menu-icons/ventas-cercanas-icon.svg";
+import NewPubIcon from "../../img/burger-menu-icons/crear-publicacion-icon.svg";
+import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
+import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
+import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
+
 
 const Header = () => {
 
@@ -56,10 +70,17 @@ const Header = () => {
             
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
-                    <li className="list__items"><Link to='/login'>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'>Vender</Link></li>
-                    <li className="list__items"><Link to='/'>Donar</Link></li>
-                    <li className="list__items"><Link to='/'>Contacto</Link></li>
+                    <li className="list__items"><Link to='/login'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={VendedoresCercaIcon}/>Vendedores cerca de mí</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={CloseSessionIcon}/>Cerrar sesión</Link></li>
                 </ul>
             </div>
             
