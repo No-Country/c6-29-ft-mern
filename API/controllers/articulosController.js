@@ -103,7 +103,6 @@ module.exports ={
       
     },
     
-    favoritos: async () => {},
     localizar: async () => {},
       
 
