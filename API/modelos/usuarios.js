@@ -28,8 +28,14 @@ const UsuarioSchema = Schema({
         type:mongoose.Schema.ObjectId,
         ref:"Contacto"
     },
-    articulos_id:  [{ObjectId}], 
-    favoritos_id: [{ObjectId}],
+    articulos_id: [{
+        type:mongoose.Schema.ObjectId,
+        ref:"Articulos"
+    }], 
+    favoritos_id: [{
+        type:mongoose.Schema.ObjectId,
+        ref:"Articulos"
+    }],
     feria: {
         nombre:{type: String},
         ubicacionReal: {type: String},

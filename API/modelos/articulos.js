@@ -2,15 +2,8 @@ const {Schema, model, default: mongoose} = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 const ArticulosSchema = Schema({
     contacto: {
-        nombre: {type: String, required: true}, 
-        apellido: {type: String, required: true}, 
-        telefono: {type: String, required: true}, 
-        email: {type: String, required: true}, 
-        direccion: {type: String, required: true},
-        coordenadas: {
-            latitud: {type: Number},
-            longitud: {type: Number}, 
-        }
+        type:mongoose.Schema.ObjectId,
+        ref:"Contacto"
     },
     nombreArticulo: {type: String, required: true},
     fechaCreacion: {type: Date},

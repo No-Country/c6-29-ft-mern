@@ -9,7 +9,6 @@ module.exports ={
             populate: ['categoria', 'contacto'],
             limit: 10,
           }
-
           const articulosAll = await articulos.paginate(query, options)
           res.status(200).json(articulosAll)
         } catch (error) {
