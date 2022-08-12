@@ -101,9 +101,7 @@ module.exports ={
       }
 
       
-    },
-    
-    localizar: async () => {},
+    }
       
 
 }
