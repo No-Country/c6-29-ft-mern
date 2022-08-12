@@ -11,7 +11,7 @@ const Header = () => {
 
     const showNavMenu = () => {
         const navMenu = document.querySelector("[data-nav-menu]");
-        const bars = document.querySelector("[data-bars]");
+        // const bars = document.querySelector("[data-bars]");
         
         if(navMenu.classList.contains("visible")){
             
@@ -50,9 +50,9 @@ const Header = () => {
 
     return(
         <div className="header-container" data-header-container>
-            <img src={Bars} onClick={showNavMenu} data-bars/>
-            <Link to='/'><img src={GsLogo}/></Link>
-            <img src={UserLogo} onClick={showProfileMenu} data-profile/>
+            <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
+            <Link to='/'><img src={GsLogo} alt="imagen"/></Link>
+            <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>
             
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
@@ -63,7 +63,7 @@ const Header = () => {
                 </ul>
             </div>
             
-            <div className="nav-menu__container" data-profile-menu>
+            <div className="nav-menu__container" data-profile-menu> 
                 <ul className="container__list">
                     <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
                     <li className="list__items"><Link to= '/register'>Registrarse</Link></li>

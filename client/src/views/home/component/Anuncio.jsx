@@ -9,7 +9,7 @@ function Anuncio ( ) {
             <div className="box-anuncio row row justify-content-center ms-1 border border-1">
                 <div className="col-2 align-self-center ms-0">
                     <div className="img row justify-content-start">
-                    <div className="col-3 img"><img className="anuncio-img" src={AnuncioIcon}/></div>
+                    <div className="col-3 img"><img className="anuncio-img" src={AnuncioIcon} alt="Icon-anuncio"/></div>
                     </div>
                 </div>
                 <div class="col-8 mt-4 ms-0">
