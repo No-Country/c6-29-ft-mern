@@ -20,6 +20,10 @@ const ArticulosSchema = Schema({
         type:mongoose.Schema.ObjectId,
         ref:"Categoria"
     },
+    contacto:{
+        type:mongoose.Schema.ObjectId,
+        ref:"Contacto"
+    },
     condicion:{
         type : String,
         default: 'USADO'
