@@ -17,20 +17,16 @@ const UsuarioSchema = Schema({
     rol: {
         type : String,
         required: true,
-        emun: ['ADMIN', 'USUARIO'],
+        emun: {
+            values: ['ADMIN', 'USUARIO'],
+            message: 'Usuario tiene que ser ADMIN o USER.'
+        },
         default: 'USUARIO',
     },
     avatar: {type : String},
-    contacto: {
-        nombre: {type: String}, 
-        apellido: {type: String}, 
-        telefono: {type: String}, 
-        email: {type: String}, 
-        direccion: {type: String},
-        coordenadas: {
-            latitud: {type: Number},
-            longitud: {type: Number}, 
-        }
+    contacto:{
+        type:mongoose.Schema.ObjectId,
+        ref:"Contacto"
     },
     articulos_id:  [{ObjectId}], 
     favoritos_id: [{ObjectId}],

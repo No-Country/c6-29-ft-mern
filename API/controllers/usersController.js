@@ -7,7 +7,14 @@ module.exports ={
 
     try {
 
-      const usuarios = await Usuarios.paginate({limit:4});
+      const query = {};
+
+      const options = {
+        populate: 'contacto',
+        limit: 5,
+      }
+
+      const usuarios = await Usuarios.paginate(query, options);
 
       res.status(201).json({
         usuarios
