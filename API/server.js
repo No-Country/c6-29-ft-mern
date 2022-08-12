@@ -9,6 +9,7 @@ var usersRouter = require('./routes/usuarios');
 var articulosRouter =require('./routes/articulos');
 var categoriasRouter =require('./routes/categorias');
 var contactosRouter =require('./routes/contactos');
+var authRouter =require('./routes/auth');
 
 const database = async () => {
     await dbConnection();
@@ -26,6 +27,7 @@ app.use('/usuarios', usersRouter);
 app.use('/articulos',articulosRouter);
 app.use('/categorias',categoriasRouter);
 app.use('/contactos',contactosRouter);
+app.use('/auth',authRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

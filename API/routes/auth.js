@@ -1,10 +1,26 @@
-const router = require("express").Router();
+const Router = require("express");
+const authController = require('../controllers/authController');
+
+const router = Router();
+
+
+router.post('/login',authController.login)
+
+router.post('/registro',authController.registro)
+
+
+
+
+module.exports = router;
+
+
+/* const router = require("express").Router();
 const validator = require('../config/validator.js');
 const passport = require('../config/passport')
 const authController = require('../controllers/authController');
 
 router.route('/auth/registration')
-.post(validator, authController.userRegistration)
+.post(authController.userRegistration)
 
 router.route('/auth/login')
 .post(authController.userLogIn)
@@ -16,4 +32,4 @@ router.route('/verify/:uniqueString')
 .get(authController.userEmailVerification)
 
 router.route('/auth/logInToken')
-.get(passport.authenticate('jwt',{session: false}), authController.verifyToken)
+.get(passport.authenticate('jwt',{session: false}), authController.verifyToken) */

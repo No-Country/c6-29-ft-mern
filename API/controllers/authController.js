@@ -1,4 +1,107 @@
-const User = require('../models/user')
+const { response, request } = require("express");
+const bcryptjs = require("bcryptjs");
+
+const { generateJWT } = require("../helpers/generateJWT");
+const { sendMail } = require("../helpers/sendgrid");
+
+const Usuario = require('../modelos/usuarios');
+
+module.exports = {
+    registro : async (req,res) => {
+        const {username, email, password} = req.body;
+
+        const user = await Usuario.find({email:email});
+
+        console.log(user)
+
+        if(user.length > 0){
+            return res.status(400).json({
+                msg:'the email is already registered'
+            })
+        }
+
+        const newUser = new Usuario({username, email, password})
+
+        //encrypting the password
+        const salt = bcryptjs.genSaltSync(10);
+        newUser.password = bcryptjs.hashSync(password, salt);
+
+        try {
+            await newUser.save();
+            sendMail(email); //send welcome email
+            return res.status(200).json({
+                user: newUser
+            })
+        } catch (error) {
+            return res.status(500).json({
+                error: error
+            })
+        }
+    },
+
+    login: async (req,res) => {
+        const {email, password} = req.body;
+
+        try {
+            const user = await Usuario.find({email:email})
+    
+            if(!user[0]){
+                return res.status(400).json({
+                    msg: 'User does not exist'
+                })
+            }
+    
+    
+            //valida la contraseña
+            const validPassword = bcryptjs.compareSync(password, user[0].password);
+            if(!validPassword){
+                return res.status(400).json({
+                    msg: 'password error'
+                })
+            }
+    
+            //generate JWT
+            const token = await generateJWT(user[0].id);
+    
+            res.json({
+                user,
+                token
+            })
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({
+                error
+            })
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const Usuarios = require('../modelos/usuarios')
 const bcryptjs = require('bcryptjs')
 //const crypto = require('crypto')
 //PENDIENTE crypto es parte de node ahora, actualizar!
@@ -49,24 +152,28 @@ const authController = {
         }
 
     },
-
     userRegistration: async (req,res) => {
-        let {userFirstname, userLastname, userEmail, userPassword, userPhotoURL, userCountry, userEmailVerified, from} = req.body.newUserData
+        let {
+            username,
+            password,
+            email,
+            from
+        } = req.body
 
         try{
-            const userExists = await User.findOne({userEmail})
+            const userExists = await Usuarios.findOne({email})
             if (userExists){
                 if(userExists.from.indexOf(from) !== -1){
                     res.json({success: false, from:"registrationForm", message: "You have already registered, please proceed to 'Log in'."})
                 }else{
-                    const hashedPassword = bcryptjs.hashSync(userPassword, 10)
+                    const hashedPassword = bcryptjs.hashSync(password, 10)
                     userExists.from.push(from)
-                    userExists.userPassword.push(hashedPassword)
+                    userExists.password.push(hashedPassword)
                     if(from === "registrationForm"){
                         //luego agregaremos verificacion via email
                         userExists.userUniqueString = crypto.randomBytes(15).toString('hex')
                         await userExists.save()
-                        await sendEmail(userEmail, userExists.uniqueString)
+                        await sendEmail(email, userExists.uniqueString)
                         res.json({success: true, from:"registrationForm", message: "To confirm your registration we have sent an email to you."})
                     }else{
                         userExists.save()
@@ -74,7 +181,7 @@ const authController = {
                     }
                 }
             }else{
-                const hashedPassword = bcryptjs.hashSync(userPassword,10)
+                const hashedPassword = bcryptjs.hashSync(password,10)
                 const newUser = await new User({
                     userFirstname, 
                     userLastname, 
@@ -186,6 +293,5 @@ const authController = {
             })
         }
     },
-}
+} */
 
-module.exports = authController
