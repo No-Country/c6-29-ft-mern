@@ -18,7 +18,7 @@ const ArticulosSchema = Schema({
     descripcion:{type: String},
     categoria:{
         type:mongoose.Schema.ObjectId,
-        ref:"categorias"
+        ref:"Categoria"
     },
     condicion:{
         type : String,

@@ -2,10 +2,18 @@ const articulos = require('../modelos/articulos');
 module.exports ={
     getAll: async function(req, res, next) {
         try {
-          const articulosAll = await articulos.paginate({limit:4}).populate("categoria")
+          const articulosAll = await articulos.paginate({limit:4})
           res.status(200).json(articulosAll)
         } catch (error) {
           console.log(error);
+        }
+      },
+      getCategorias: async function(req,res,next){
+        try {
+            const articulosCategoria = await articulos.find().populate("categoria")
+            res.status(200).json(articulosCategoria)
+        } catch (error) {
+            console.log(error);
         }
       },
       getnombre: async function(req,res,next){
