@@ -47,7 +47,7 @@ module.exports = {
     
             if(!user[0]){
                 return res.status(400).json({
-                    msg: 'User does not exist'
+                    msg: 'Email does not exist'
                 })
             }
     
