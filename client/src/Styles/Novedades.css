@@ -6,7 +6,7 @@
 h6 {
     font: Kumbh Sans;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 10px;
     line-height: 12.4px;
 }
 .text-ver {
@@ -27,11 +27,7 @@ h6 {
     color: #912E1C;
 
 }
-.card-main {
-    border-radius: 20px;
-}
-
 .img-card {
     border-radius: 18px;
-}
-
+    width: 60px;
+} 
