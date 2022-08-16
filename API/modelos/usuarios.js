@@ -3,8 +3,8 @@ const mongoose =require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
 const {Schema, model} = require('mongoose');
-var schema = mongoose.Schema,
-    ObjectId = schema.ObjectId;
+var schema = mongoose.Schema
+const ObjectId = schema.ObjectId;
 const UsuarioSchema = Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
