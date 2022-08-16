@@ -188,11 +188,11 @@ module.exports ={
         error
       })
     }
+  }
 
-
-  },
 
 }
+
 
 
 
