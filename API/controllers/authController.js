@@ -50,8 +50,6 @@ module.exports = {
                     msg: 'Email does not exist'
                 })
             }
-    
-    
             //valida la contraseña
             const validPassword = bcryptjs.compareSync(password, user[0].password);
             if(!validPassword){
