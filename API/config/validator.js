@@ -2,7 +2,7 @@ const Joi = require('joi')
 
 const Joi = require('@hapi/joi')
 
-Joi.objectId = require('joi-objectid')(Joi)
+Joi.objectId = require("joi-objectid")(Joi)
 
 const validator = (req, res, next)=>{
 
