@@ -61,7 +61,7 @@ module.exports = {
             }
     
             //generate JWT
-            const token = await generateJWT(user[0].id);
+            const token = await generateJWT(user[0]._id);
     
             res.json({
                 user,
