@@ -1,5 +1,5 @@
 import GsLogo from "../../img/gs-logo.png";
-import UserLogo from "../../img/user-logo.png";
+import UserLogo from "../../img/Icono-cuenta.png";
 import Bars from "../../img/bars-menu.png";
 import {Link} from 'react-router-dom';
 import "../../Styles/header.css";

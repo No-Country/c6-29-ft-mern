@@ -3,6 +3,8 @@ import Anuncio from "./component/Anuncio";
 import Buscador from "./component/Buscador";
 import Novedades from "./component/Novedades";
 
+import '../../Styles/Home.css';
+
 
 const Home = () => {
     return(

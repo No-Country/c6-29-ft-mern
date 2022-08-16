@@ -71,4 +71,4 @@ function Novedades ( ) {
         </div>
     );
 }
-export default Novedades;
+export default Novedades;   
