@@ -1,7 +1,7 @@
 import React from "react";
 import '../../../Styles/Anuncio.css';
 import AnuncioIcon from '../../../img/Imagen.png';
-import Cross from '../../../img/Cross.png';
+import Cross from '../../../img/Grou.png';
 
 function Anuncio ( ) {
     return ( 
@@ -32,7 +32,7 @@ function Anuncio ( ) {
                     </div>
                 </div>
                 <div className="col-2">
-                    <button className="border border-0"><img src= {Cross} alt="exit"/></button>
+                    <button className="border border-0"><img className="img-fluid" src= {Cross} alt="exit"/></button>
                 </div>
             </div>
         </div>
