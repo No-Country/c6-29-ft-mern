@@ -1,8 +1,8 @@
 const Joi = require('joi')
 
 const Joi = require('@hapi/joi')
-Joi.objectId = require('joi-objectid')(Joi)
 
+Joi.objectId = require('joi-objectid')(Joi)
 
 const validator = (req, res, next)=>{
 
@@ -56,9 +56,9 @@ const validator = (req, res, next)=>{
             }
         },
 
-
-        articulos_id : Joi.array.items('Joi-objectId')(Joi),
-        favoritos_id : Joi.array.items('Joi-objectId')(Joi),
+       
+        articulos_id : Joi.array.items(Joi.objectId()),
+        favoritos_id : Joi.array.items(Joi.objectId()),
 
     })
 
