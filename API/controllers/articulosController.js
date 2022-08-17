@@ -32,7 +32,7 @@ module.exports ={
     create: async function(req,res,next){
       try {
       const articulo = new articulos({
-          contacto: req.body.contacto,
+          usuario:req.body.usuario,
           nombreArticulo: req.body.nombreArticulo,
           fechaCreacion: req.body.fechaCreacion,
           imagen: req.body.imagen,
