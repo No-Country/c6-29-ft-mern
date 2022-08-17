@@ -27,7 +27,6 @@ const UsuarioSchema = Schema({
     nombre: {type: String},
     apellido: {type: String},
     telefono: {type: String},
-    email: {type: String},
     direccion: {type: String},
     coordenadas: {
         latitud: {type: Number},

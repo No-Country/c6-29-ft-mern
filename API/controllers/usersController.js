@@ -63,7 +63,6 @@ module.exports ={
       nombre:req.body.nombre,
       apellido:req.body.apellido,
       telefono:req.body.telefono,
-      email:req.body.email,
       direccion:req.body.direccion,
       coordenadas:req.body.coordenadas,
       rol:req.body.rol,
