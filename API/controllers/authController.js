@@ -3,7 +3,8 @@ const bcryptjs = require('bcryptjs')
 //const crypto = require('crypto')
 //PENDIENTE crypto es parte de node ahora, actualizar!
 const nodemailer = require('nodemailer')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const usuarios = require('../modelos/usuarios');
 
 const sendEmail = async (email, uniqueString) => {
 
@@ -12,17 +13,17 @@ const sendEmail = async (email, uniqueString) => {
         port: 465,
         secure: true,
         auth: {
-            user: "dev.mviola@gmail.com",
-            pass: "FALTA CONTRASENA" 
+            user: "c6g29ftmern@gmail.com",
+            pass: "GarageStore2022" 
         }
     })
 
-    let sender = "dev.mviola@gmail.com"
+    let sender = "c6g29ftmern@gmail.com"
     let mailOptions ={
         from: sender,
         to: email,
-        subject: "MyTinerary: User registration validation",
-        html: `Press <a href="https://mytinerary-viola.herokuapp.com/api/verify/${uniqueString}">here</a> to validate the user registration`
+        subject: "GarageStore: User registration validation",
+        html: `Press <a href="https://garagestore.herokuapp.com/api/verify/${uniqueString}">here</a> to validate the user registration`
     };
     await transporter.sendMail(mailOptions, function(error,response){
         if(error){
@@ -43,7 +44,7 @@ const authController = {
         if(user){
             user.userEmailVerified = true
             await user.save()
-            res.redirect("https://mytinerary-viola.herokuapp.com/")
+            res.redirect("https://garagestore.herokuapp.com/")
         }else{
             res.json({success: false, response: "Your email has not been verified"})
         }
@@ -51,22 +52,22 @@ const authController = {
     },
 
     userRegistration: async (req,res) => {
-        let {userFirstname, userLastname, userEmail, userPassword, userPhotoURL, userCountry, userEmailVerified, from} = req.body.newUserData
+        let {username, email, password, rol, avatar, articulos_id,contacto_id, favoritos_id, feria, from} = req.body.Usuarios
 
         try{
-            const userExists = await User.findOne({userEmail})
+            const userExists = await User.findOne({email})
             if (userExists){
                 if(userExists.from.indexOf(from) !== -1){
                     res.json({success: false, from:"registrationForm", message: "You have already registered, please proceed to 'Log in'."})
                 }else{
-                    const hashedPassword = bcryptjs.hashSync(userPassword, 10)
+                    const hashedPassword = bcryptjs.hashSync(password, 10)
                     userExists.from.push(from)
                     userExists.userPassword.push(hashedPassword)
                     if(from === "registrationForm"){
                         //luego agregaremos verificacion via email
                         userExists.userUniqueString = crypto.randomBytes(15).toString('hex')
                         await userExists.save()
-                        await sendEmail(userEmail, userExists.uniqueString)
+                        await sendEmail(email, userExists.uniqueString)
                         res.json({success: true, from:"registrationForm", message: "To confirm your registration we have sent an email to you."})
                     }else{
                         userExists.save()
@@ -74,25 +75,28 @@ const authController = {
                     }
                 }
             }else{
-                const hashedPassword = bcryptjs.hashSync(userPassword,10)
+                const hashedPassword = bcryptjs.hashSync(password,10)
                 const newUser = await new User({
-                    userFirstname, 
-                    userLastname, 
-                    userEmail, 
-                    userPassword:[hashedPassword], 
+                    username, 
+                    email, 
+                    password:[hashedPassword], 
+                    rol, 
                     userUniqueString: crypto.randomBytes(15).toString('hex'),
-                    userPhotoURL, 
-                    userCountry, 
+                    avatar, 
+                    contacto_id,
+                    articulos_id,
+                    favoritos_id,
+                    feria, 
                     userEmailVerified:false,
                     from:[from],
                 })
                 if(from !== "registrationForm"){
-                    await newUser.save()
+                    await Usuarios.save()
                     res.json({success: true, from:"registrationForm", message: "Congrats! Your user has been created from: "+from})
                 }
                 else{
-                    await newUser.save()
-                    await sendEmail(userEmail, newUser.userUniqueString)
+                    await Usuarios.save()
+                    await sendEmail(email, Usuarios.userUniqueString)
                     res.json({success: true, from:"registrationForm", message: "We have sent an email to confirm the registration, please check your mailbox."})
                 }
             }
@@ -103,30 +107,30 @@ const authController = {
         }
     },
     userLogIn: async (req, res)=>{
-        const {userEmail, userPassword, from } = req.body.loggedUserData
+        const {email, password, from } = req.body.Usuarios
         try{
-            const userExists = await User.findOne({userEmail})
+            const userExists = await User.findOne({email})
             if(!userExists){
                 res.json({success: false, message: "You need to be registered. Please proceed to sign up first."})
             }
             else{
                 if(from !== "logInForm"){
-                    let passwordMatches = userExists.userPassword.filter(pass => bcryptjs.compareSync(userPassword, pass))
+                    let passwordMatches = userExists.password.filter(pass => bcryptjs.compareSync(password, pass))
                     if (passwordMatches.length > 0){
                         const userData = {
                             _id: userExists._id,
-                            userFirstname: userExists.userFirstname,
-                            userEmail: userExists.userEmail,
-                            userPhotoURL: userExists.userPhotoURL,
+                            userName: userExists.username,
+                            userEmail: userExists.email,
+                            avatar: userExists.avatar,
                             from: userExists.from,
                         }
                         await userExists.save()
-                        const token = jwt.sign({...userData}, process.env.SECRET_KEY,{expiresIn:60*60*24})
+                        const token = jwt.sign({...Usuarios}, process.env.SECRET_KEY,{expiresIn:60*60*24})
                         res.json({
                             success: true, 
                             from: from, 
-                            response: {token, userData}, 
-                            message: "Welcome back "+userData.userFirstname
+                            response: {token, Usuarios}, 
+                            message: "Welcome back "+Usarios.username
                         })
                     }
                     else{
@@ -134,22 +138,22 @@ const authController = {
                     }
                 }
                 else{
-                    if(userExists.userEmailVerified){
-                        let passwordMatches = userExists.userPassword.filter(pass => bcryptjs.compareSync(userPassword, pass))
+                    if(userExists.email){
+                        let passwordMatches = userExists.password.filter(pass => bcryptjs.compareSync(password, pass))
                         if(passwordMatches.length > 0){
-                        const userData ={
+                        const Usuarios ={
                             _id: userExists._id,
-                            userFirstname: userExists.userFirstname,
-                            userEmail: userExists.userEmail,
-                            userPhotoURL: userExists.userPhotoURL,
+                            username: userExists.username,
+                            email: userExists.email,
+                            avatar: userExists.avatar,
                             from: userExists.from,
                         }
-                        const token = jwt.sign({...userData},process.env.SECRET_KEY,{expiresIn:60*60*24})
+                        const token = jwt.sign({...Usuarios},process.env.SECRET_KEY,{expiresIn:60*60*24})
                         res.json({
                             success: true, 
                             from: from, 
-                            response: {token, userData}, 
-                            message: "Welcome back "+userData.userFirstname
+                            response: {token, Usuarios}, 
+                            message: "Welcome back "+Usuarios.username
                         })
                         }else{
                             res.json({success: false, from: from, message: "Email or password are incorrect"})
@@ -176,8 +180,12 @@ const authController = {
         if(!req.err){
             res.json({
                 success: true,
-                response: {_id:req.user._id, userFirstname: req.user.userFirstname, userEmail: req.user.userEmail, userPhotoURL: req.user.userPhotoURL, from: "token"},
-                message: "Welcome back "+req.user.userFirstname
+                response: {_id:req.Usuarios._id,
+                     username: req.Usuarios.username,
+                      email: req.Usuarios.email,
+                     avatar: req.Usuarios.avatar,
+                    from: "token"},
+                message: "Welcome back "+req.Usuarios.username
             })
         }else{
             res.json({
