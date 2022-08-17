@@ -8,7 +8,6 @@ const { dbConnection } = require('./database/config');
 var usersRouter = require('./routes/usuarios');
 var articulosRouter =require('./routes/articulos');
 var categoriasRouter =require('./routes/categorias');
-var contactosRouter =require('./routes/contactos');
 var authRouter =require('./routes/auth');
 
 const database = async () => {
@@ -26,7 +25,6 @@ app.use(express.json())
 app.use('/usuarios', usersRouter);
 app.use('/articulos',articulosRouter);
 app.use('/categorias',categoriasRouter);
-app.use('/contactos',contactosRouter);
 app.use('/auth',authRouter);
 
 app.listen(port, () => {

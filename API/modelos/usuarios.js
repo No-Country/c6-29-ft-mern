@@ -24,9 +24,14 @@ const UsuarioSchema = Schema({
         default: 'USUARIO',
     },
     avatar: {type : String},
-    contacto:{
-        type:mongoose.Schema.ObjectId,
-        ref:"Contacto"
+    nombre: {type: String, required: true},
+    apellido: {type: String, required: true},
+    telefono: {type: String, required: true},
+    email: {type: String, required: true},
+    direccion: {type: String, required: true},
+    coordenadas: {
+        latitud: {type: Number},
+        longitud: {type: Number}, 
     },
     articulos_id: [{
         type:mongoose.Schema.ObjectId,
