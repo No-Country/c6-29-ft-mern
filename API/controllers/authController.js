@@ -1,4 +1,5 @@
 const bcryptjs = require("bcryptjs");
+const { ExtractJwt } = require("passport-jwt");
 
 const { generateJWT } = require("../helpers/generateJWT");
 const { sendMail } = require("../helpers/sendgrid");
@@ -61,7 +62,7 @@ module.exports = {
             const token = await generateJWT(user[0]._id);
     
             res.json({
-                user,
+            
                 token
             })
             

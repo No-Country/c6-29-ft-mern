@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken');
+const usuarios = require('../modelos/usuarios');
 
 
-const generateJWT = (uid = '') =>{
+const generateJWT = (userId = '') =>{
     return new Promise((res, rej) => {
-        const payload = {uid};
+        const payload = {userId};
 
-        jwt.sign(payload, process.env.SECRETORPRIVATEKEY, {
+        jwt.sign(payload,process.env.SECRETORPRIVATEKEY, {
             expiresIn: '6h'
         }, (err, token) =>{
             if(err){
