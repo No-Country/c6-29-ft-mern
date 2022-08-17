@@ -1,4 +1,3 @@
-const {response, request} = require('express');
 const Usuarios = require('../modelos/usuarios');
 
 module.exports ={
