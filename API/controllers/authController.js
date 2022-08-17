@@ -1,5 +1,5 @@
 const bcryptjs = require("bcryptjs");
-const { ExtractJwt } = require("passport-jwt");
+const passport = require("passport");
 
 const { generateJWT } = require("../helpers/generateJWT");
 const { sendMail } = require("../helpers/sendgrid");
