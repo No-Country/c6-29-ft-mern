@@ -12,7 +12,7 @@ function Anuncio ( ) {
                     <div className="col-3 img"><img className="anuncio-img" src={AnuncioIcon} alt="Icon-anuncio"/></div>
                     </div>
                 </div>
-                <div class="col-8 mt-4 ms-0">
+                <div className="col-8 mt-4 ms-0">
                     <div className="row justify-content-center">
                         <div className="col-12 align-self-center ms-5">
                             <div className="row row-cols-1 justify-content-start">
