@@ -11,7 +11,7 @@ const [email,setEmail] = useState ("");
 const [pass,setPass] = useState ("");
 const [doublePass,setDoublePass] = useState ("");
 
-const form = document.querySelector("[data-register-form]");
+//const form = document.querySelector("[data-register-form]");
 
     const createUser = (e) => {
        e.preventDefault();
@@ -25,7 +25,7 @@ const form = document.querySelector("[data-register-form]");
         };    
            console.log(object)
     
-           fetch("http://localhost:3001/usuarios/%22,%7B",{
+           fetch("http://localhost:3001/auth/registro",{
     
                 method:'POST',
                 headers:{
