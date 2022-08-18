@@ -15,7 +15,7 @@ const form = document.querySelector("[data-register-form]");
 
     const createUser = (e) => {
        e.preventDefault();
-       if(pass !=== doublePass){
+       if(pass !== doublePass){
         console.log("contraseñas no coinciden");
        } else {
         const object = {
