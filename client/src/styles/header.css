@@ -2,6 +2,7 @@
     background-color: #FEFBF7;
     display: flex;
     height: 60px;
+    position: relative;
     width: 100%;
     z-index: 1000;
 }
@@ -22,6 +23,11 @@
     margin: auto 0;
     width: 50%;
     object-fit: contain;
+}
+
+.header-container .nav-menu-bars{
+    position: relative;
+    transition: all .2s;
 }
 
 .header-container img:nth-child(3) {
@@ -87,4 +93,12 @@
 .visible{
     display: block;
     transition: all .5s;
+}
+
+.header-container .close-menu-icon{
+    position: absolute;
+    top: .8em;
+    left: 8%;
+    height: 2em;
+    width: auto;
 }
