@@ -23,7 +23,6 @@ function Novedades ( ) {
                                     <img src= {Prueba} className="img-card" alt="producto"/>
                             </div>
                             <div className="col-7 ms-0">
-
                                     <h6 className="card-title">Iphone 7 32GB</h6>
                                     <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">Belgrano</small></p>    
                                     <p className="price card-text">$94.390</p>
@@ -62,7 +61,6 @@ function Novedades ( ) {
                                     <img src="https://lp2.hm.com/hmgoepprod?set=source[/99/38/99380ebf278be1c548eddc9f5a0a3894a6acc91c.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[y],hmver[2]&call=url[file:/product/main]" className="img-card" alt="producto"/>
                             </div>
                             <div className="col-7 ms-0">
-
                                     <h6 className="card-title">Nombre del producto</h6>
                                     <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">Ubication</small></p>    
                                     <p className="price card-text">Price$</p>
