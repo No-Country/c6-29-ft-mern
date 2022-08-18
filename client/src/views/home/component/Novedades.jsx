@@ -29,7 +29,7 @@ function Novedades ( ) {
        }, [])
        console.log(data);
     return ( 
-        <div className="container">
+        <div className="container-fluid">
             <div className="row justify-content-between mt-5">
                 <div className="col-9 mb-4">
                     <h2>Novedades</h2>
