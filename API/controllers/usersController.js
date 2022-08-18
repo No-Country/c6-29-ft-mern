@@ -3,16 +3,7 @@ const Usuarios = require('../modelos/usuarios');
 module.exports ={
 
   get: async (req,res,next) =>{
-
-    try {
-
-      const query = {};
-
-      const options = {
-        populate: 'contacto',
-        limit: 5,
-      }
-
+    try{
       const usuarios = await Usuarios.paginate(query, options);
 
       res.status(201).json({
