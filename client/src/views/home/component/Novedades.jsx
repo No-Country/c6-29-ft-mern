@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import Pin from '../../../img/Pin.png';
 import Prueba from '../../../img/product.png'
@@ -6,6 +6,28 @@ import Prueba from '../../../img/product.png'
 import '../../../Styles/Novedades.css';
 
 function Novedades ( ) {
+    const [data,setData] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+              const response = await fetch(
+                "http://localhost:3001/articulos/",{
+                  method:'GET',
+                  headers: {
+                    'Content-type': 'application/json',
+                },
+                }
+              );
+      
+              const res= await response.json()
+              setData(res)
+            } catch (err) {
+              console.log(err);
+            }
+          };
+          fetchData()
+       }, [])
+       console.log(data);
     return ( 
         <div className="container">
             <div className="row justify-content-between mt-5">
