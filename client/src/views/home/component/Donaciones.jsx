@@ -4,7 +4,7 @@ import Corazon from '../../../img/corazon.png';
 import Prueba2 from '../../../img/Prueba2.png'
 import '../../../Styles/Donaciones.css'
 
-function Donaciones ( ) {
+function Donaciones () {
     return ( 
         <div className="row justify-content-center box-donaciones">
             <div className="col-12 mt-2">

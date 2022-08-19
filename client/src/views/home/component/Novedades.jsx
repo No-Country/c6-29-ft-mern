@@ -5,6 +5,7 @@ import Prueba from '../../../img/product.png'
 
 import '../../../Styles/Novedades.css';
 import PrimaryCards from "./PrimaryCards";
+import SecondaryCards from "./SecondaryCards";
 
 function Novedades ( ) {
 
@@ -48,7 +49,7 @@ function Novedades ( ) {
             </div>
             <div className="row main__card justify-content-between">
 
-                {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={e.precio}/>))}
+                {data.map((e)=> (<SecondaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={"$" + e.precio}/>))}
 
             </div>
         </div>
