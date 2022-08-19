@@ -1,16 +1,20 @@
-const SecondaryCards = () => {
+import Pin from '../../../img/Pin.png';
+
+export const SecondaryCards = (imgURL,productName,productLocation,productPrice) => {
     return(
         <div className="col-6 mb-3 box__card bg-white rounded-2">
                                 <div className="row row-cols-1">
                                     <div className="col-5 card-main">
-                                    <img src= {Prueba} className="img-card" alt="producto"/>
+                                    <img src= {imgURL} className="img-card" alt="producto"/>
                             </div>
                             <div className="col-7 ms-0">
-                                    <h6 className="card-title">Iphone 7 32GB</h6>
-                                    <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">Belgrano</small></p>    
-                                    <p className="price card-text">$94.390</p>
+                                    <h6 className="card-title">{productName}</h6>
+                                    <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">{productLocation}</small></p>    
+                                    <p className="price card-text">{productPrice}</p>
                             </div>
                         </div>
                 </div>
     )
-}
+};
+
+export default SecondaryCards
