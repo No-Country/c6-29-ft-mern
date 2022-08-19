@@ -3,6 +3,7 @@ import FacebookLogo from "../../img/facebook-logo.png"
 import GoogleLogo from "../../img/google-logo.png"
 import GsLogo from "../../img/gs-logo.png"
 import checkDone from "../../img/check.png"
+import returnButton from "../../img/return.svg"
 import { useState } from "react";
 import {Link} from 'react-router-dom';
 
@@ -45,6 +46,10 @@ const [doublePass,setDoublePass] = useState ("");
     }    
 }
   
+const handleReturn = () => {
+    window.location.pathname = "/";
+}
+
 // FUNCION PARA REDIRECCIONAR AL LOGIN Y MOSTRAR MENSAJE DE ARRIBO CORREO
     
 const showRegisterMessage = () =>{
@@ -59,6 +64,7 @@ const showRegisterMessage = () =>{
 return(
     <div className="login__container" data-register-container>
         <div className="login__logo-container">
+            <img src={returnButton} onClick={handleReturn} className="return-button" alt="" />
             <img className="logo__item" src={GsLogo}/>
         </div>
         <h2 className="container__title">Creá tu <span>cuenta</span></h2>

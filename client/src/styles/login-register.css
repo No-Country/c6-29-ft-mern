@@ -26,6 +26,13 @@
     width: 100%;
 }
 
+.login__logo-container .return-button{
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 30px;
+}
+
 .login__logo-container img{
     width: 55%;
 }
@@ -55,12 +62,15 @@
     background-color: transparent;
     border: 2px solid #D8CEBD;
     border-radius: 2em;
+    color: #333333;
+    font-size: 16px;
     font-family: var(--primaryFont);
     padding: 1em;
 }
 
 .input-container__item:focus{
-    border: 2px solid #AD4A00;
+    background-color: white;
+    color: black;
     outline: none;
 }
 
@@ -73,9 +83,11 @@
 .input-container__button{
     background-color: #0F643B;
     border: none;
-    border-radius: 24px;
+    border-radius: 32px;
     color: white;
-    height: 50px;
+    font-weight: bold;
+    font-family: var(--primaryFont);
+    height: 65px;
 }
 
 .login__separador{

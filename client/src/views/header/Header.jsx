@@ -20,7 +20,6 @@ import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg
 
 const Header = () => {
 
-
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
     const showNavMenu = () => {
