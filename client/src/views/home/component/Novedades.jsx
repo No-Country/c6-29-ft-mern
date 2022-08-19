@@ -4,9 +4,13 @@ import Pin from '../../../img/Pin.png';
 import Prueba from '../../../img/product.png'
 
 import '../../../Styles/Novedades.css';
+import PrimaryCards from "./PrimaryCards";
 
 function Novedades ( ) {
-    const [data,setData] = useState([])
+
+    const [data,setData] = useState([]);
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,14 +24,18 @@ function Novedades ( ) {
               );
       
               const res= await response.json()
-              setData(res)
+              setData(res.docs)
+            
             } catch (err) {
               console.log(err);
             }
           };
           fetchData()
        }, [])
-       console.log(data);
+       
+       console.log(data)
+       
+
     return ( 
         <div className="container-fluid">
             <div className="row justify-content-between mt-5">
@@ -39,7 +47,16 @@ function Novedades ( ) {
                 </div> 
             </div>
             <div className="row main__card justify-content-between">
-                <div className="col-6 mb-3 box__card bg-white rounded-2">
+
+                {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={e.precio}/>))}
+
+            </div>
+        </div>
+    );
+}
+export default Novedades;   
+
+/* <div className="col-6 mb-3 box__card bg-white rounded-2">
                                 <div className="row row-cols-1">
                                     <div className="col-5 card-main">
                                     <img src= {Prueba} className="img-card" alt="producto"/>
@@ -88,9 +105,4 @@ function Novedades ( ) {
                                     <p className="price card-text">Price$</p>
                             </div>
                         </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-export default Novedades;   
+                </div> */
