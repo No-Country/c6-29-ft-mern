@@ -4,6 +4,7 @@ import Buscador from "./component/Buscador";
 import Novedades from "./component/Novedades";
 
 import '../../Styles/Home.css';
+import Donaciones from "./component/Donaciones";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <Buscador/>
             <Anuncio/>
             <Novedades/>
+            <Donaciones/>
         </div>
     )
 }

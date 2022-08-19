@@ -1,0 +1,19 @@
+h3 {
+    margin-top: 4px;
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 22.32px;
+}
+.card-title-donaciones {
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 14.88px;
+}
+.card-main {
+    border-radius: 20px;
+}
+.box-donaciones {
+    background-color: #FAF3E7;
+}
