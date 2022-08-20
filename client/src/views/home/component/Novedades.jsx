@@ -15,6 +15,7 @@ function Novedades ( ) {
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',
+                    "x-access-token":localStorage.getItem("token")
                 },
                 }
               );
