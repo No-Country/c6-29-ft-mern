@@ -1,6 +1,6 @@
 import Pin from '../../../img/Pin.png';
 
-export const PrimaryCards = (imgURL,productName,productLocation,productPrice) => {
+export const PrimaryCards = ({imgURL,productName,productLocation,productPrice}) => {
     return(
         <div className="col-6">
                         <div className="card border border-0 card-main">
