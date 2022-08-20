@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
-import Pin from '../../../img/Pin.png';
-import Prueba from '../../../img/product.png'
+//import Pin from '../../../img/Pin.png';
+//import Prueba from '../../../img/product.png'
 
 import '../../../Styles/Novedades.css';
-import PrimaryCards from "./PrimaryCards";
+//import PrimaryCards from "./PrimaryCards";
 import SecondaryCards from "./SecondaryCards";
 
 function Novedades ( ) {
