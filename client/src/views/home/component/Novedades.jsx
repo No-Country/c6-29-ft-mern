@@ -16,7 +16,7 @@ function Novedades ( ) {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/articulos/",{
+                "http://localhost:3001/articulos/recientes",{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',
@@ -26,7 +26,7 @@ function Novedades ( ) {
               );
       
               const res= await response.json()
-              setData(res.docs)
+              setData(res)
             
             } catch (err) {
               console.log(err);
