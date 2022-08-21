@@ -12,9 +12,9 @@ const Home = () => {
         <div className="home__container">
             <Header/>
             <Buscador/>
-            <Anuncio/>
+            {/* <Anuncio/>  
             <Novedades/>
-            <Donaciones/>
+           <Donaciones/> */}
         </div>
     )
 }

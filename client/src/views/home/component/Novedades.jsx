@@ -27,7 +27,7 @@ function Novedades ( ) {
       
               const res= await response.json()
               setData(res)
-            
+                
             } catch (err) {
               console.log(err);
             }
@@ -36,6 +36,7 @@ function Novedades ( ) {
        }, [])
        
        console.log(data)
+     
        
 
     return ( 
@@ -48,7 +49,7 @@ function Novedades ( ) {
                     <Link className="text-ver text-center" to='/vermas'>Ver más</Link>
                 </div> 
             </div>
-            <div className="row main__card justify-content-between">
+            <div className="card-container-novedades">
 
                 {data.map((e)=> (<SecondaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={"$" + e.precio}/>))}
 

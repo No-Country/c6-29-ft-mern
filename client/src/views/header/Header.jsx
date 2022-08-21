@@ -63,7 +63,7 @@ const Header = () => {
     return(
         <div className="header-container" data-header-container>
             <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
-            <Link to='/'><img src={GsLogo} alt="imagen"/></Link>
+            <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>
             <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>
             
             <div className="nav-menu__container" data-nav-menu>

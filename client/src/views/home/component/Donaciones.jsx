@@ -37,7 +37,7 @@ function Donaciones () {
     return ( 
         <div className="row justify-content-center box-donaciones">
             <div className="col-12 mt-2">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center donaciones-start">
                     <div className="col-1">
                         <img src= { Corazon } alt="corazon"/>
                     </div>
@@ -46,7 +46,7 @@ function Donaciones () {
                     </div>
                     <div className="col-3">o o o</div>
                 </div>
-                <div className="row main__card justify-content-between">
+                <div className="donation__cards-container   ">
                 {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud}/>))}
                 </div>
             </div>

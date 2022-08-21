@@ -35,6 +35,13 @@
     width: 55%;
 }
 
+.header-container .logo-principal{
+    padding: 0;
+    width: 100%;
+    transform: scale(1.6);
+}
+
+
 .nav-menu__container{
     background-color: #FFFFFF;
     display: none;

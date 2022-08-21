@@ -1,16 +1,20 @@
 import Pin from '../../../img/Pin.png';
+import "../../../Styles/Primary-cards.css"
 
 export const PrimaryCards = ({imgURL,productName,productLocation}) => {
     return(
-        <div className="col-6">
-                        <div className="card border border-0 card-main">
-                            <img src= {imgURL}  className="card-img-top" alt="product-1"/>
-                            <div className="card-body">
-                                <h5 className="card-title card-title-donaciones">{productName}</h5>
+
+                        <div className="primary__card-container">
+                            <div className='primary__card__img-container'>
+                                 <img src= {imgURL}  className="primary__img-container__img" alt="product-1"/>
+                            </div>
+                            
+                            <div className="primary__card__text-container">
+                                <h5 className="text-container__title">{productName}</h5>
                                 <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">{productLocation}</small></p> 
                             </div>
                         </div>
-                    </div>
+
     )
 }
 

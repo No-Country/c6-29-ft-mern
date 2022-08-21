@@ -5,7 +5,7 @@ import Cross from '../../../img/Grou.png';
 
 function Anuncio ( ) {
     return ( 
-        <div className="container">
+        <div className="container  anuncio-container">
             <div className="box-anuncio row row justify-content-center ms-1 border border-1">
                 <div className="col-2 align-self-center ms-0">
                     <div className="img row justify-content-start">
@@ -31,7 +31,7 @@ function Anuncio ( ) {
                         </div>
                     </div>
                 </div>
-                <div className="col-2">
+                <div className="col-2 cross-anuncio">
                     <button className="border border-0"><img className="img-fluid" src= {Cross} alt="exit"/></button>
                 </div>
             </div>
