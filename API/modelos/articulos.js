@@ -1,3 +1,4 @@
+const { date } = require('joi');
 const {Schema, model, default: mongoose} = require('mongoose'); 
 const mongoosePaginate = require('mongoose-paginate-v2');
 const ArticulosSchema = Schema({
@@ -6,7 +7,7 @@ const ArticulosSchema = Schema({
         ref:"Usuario"
     },
     nombreArticulo: {type: String, required: true},
-    fechaCreacion: {type: Date},
+    fechaCreacion: {type:Date, default:Date.now},
     imagen:{type: Array},
     descripcion:{type: String},
     categoria:{
@@ -17,7 +18,9 @@ const ArticulosSchema = Schema({
         type : String,
         default: 'USADO'
     },
-    precio:{type:String, default:0},
+    precio:{type:Number,
+            min:0,
+            required:true},
     ubicacion:{
         latitud: {type: Number},
         longitud: {type: Number}},
@@ -25,7 +28,8 @@ const ArticulosSchema = Schema({
         type:String,
         emun: ['ACTIVO', 'PAUSADO', 'FINALIZADO'],
         default: 'ACTIVO'},
-    valoracion:{type:Number, default: 0}
+    valoracion:{type:Number}
 })
 ArticulosSchema.plugin(mongoosePaginate)
+ArticulosSchema.set('toJSON',{setters:true})
 module.exports = model('Articulos', ArticulosSchema);

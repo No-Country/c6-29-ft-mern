@@ -94,13 +94,21 @@ module.exports ={
           },
         })
 
-        res.status(200).json({articulosRecientes})
+        res.status(200).json(articulosRecientes)
       } catch (error) {
         res.status(400).json({error})
+      } 
+    },
+    getDonaciones: async function(req,res,next){
+      try {
+        const donaciones = await articulos.find({precio:0})
+          res.status(200).json(donaciones)   
+       
+      } catch (error) {
+          console.log(error);
       }
 
-      
-    }
+    },
       
 
 }
