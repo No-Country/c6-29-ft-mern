@@ -57,7 +57,8 @@
 }
 
 .resultados-busqueda{
-    background-color: red;
+    background-color: rgb(250, 243, 231);
+    border-bottom: 4px solid rgb(172 111 6);
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
