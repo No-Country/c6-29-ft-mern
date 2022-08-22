@@ -16,7 +16,7 @@ import NewPubIcon from "../../img/burger-menu-icons/crear-publicacion-icon.svg";
 import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
 import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
-
+import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
 const Header = () => {
 
@@ -24,19 +24,24 @@ const Header = () => {
 
     const showNavMenu = () => {
         const navMenu = document.querySelector("[data-nav-menu]");
-        // const bars = document.querySelector("[data-bars]");
-        
+        const bars = document.querySelector("[data-bars]");
+
         if(navMenu.classList.contains("visible")){
-            
+            bars.style.transform = "scale(0)"
             navMenu.style.opacity = 0
             setTimeout(() => {
                 navMenu.classList.remove("visible");
-            },400)
+                bars.src = Bars
+                bars.style.transform = "scale(1)"
+            },200)
         } else {
             navMenu.classList.add("visible")
+            bars.style.transform = "scale(0)"
             setTimeout(() => {
                 navMenu.style.opacity = 1
-            },100)
+                bars.src = CloseMenuIcon
+                bars.style.transform = "scale(1)"
+            },200)
         }
         
         }

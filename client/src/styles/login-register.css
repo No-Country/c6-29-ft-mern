@@ -17,7 +17,7 @@
 }
 
 .login__logo-container{
-    background-color: #FAF3E7;
+    background: #FAF3E7;
     border-radius: 0 0 50% 50%;
     box-sizing: border-box;
     display: flex;

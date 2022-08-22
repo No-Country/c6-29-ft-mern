@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SecondaryCards from "./SecondaryCards";
+import PrimaryCards from "./PrimaryCards";
 import '../../../Styles/Buscador.css';
+import searchIcon from "../../../img/IconoBuscar.svg"
+import filterIcon from "../../../img/botonFiltro.png"
 
 function Buscador ( ) {
     const [data,setData] = useState([]);
@@ -25,7 +27,7 @@ function Buscador ( ) {
                 console.log(searchResults)
                 searchResults.style.display = "none"
               } else {
-                searchResults.style.display = "block"
+                searchResults.style.display = "flex"
               }
             } catch (err) {
               console.log(err);
@@ -48,12 +50,20 @@ function Buscador ( ) {
 
 
     return ( 
-        <>
-        <input type="text" value={buscar} onChange={handleBuscar} data-search-bar></input>
-            <div className="resultados-busqueda" data-search-results>
-                {data.map((e)=> (<SecondaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={"$" + e.precio}/>))}
-            </div>
-    </>
+    <div className="componente-buscador__container">
+        <div className="search-filter__container">
+          <div className="buscador-container">
+            <img src={searchIcon} alt="search" className="search-icon"/>
+            <input type="text" value={buscar} onChange={handleBuscar} data-search-bar></input>
+          </div>
+          <div className="filter-button__container">
+              <img src={filterIcon} className="filter-button__button" alt="Filtrar" />
+          </div>
+        </div>
+          <div className="resultados-busqueda" data-search-results>
+            {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud} productPrice={"$" + e.precio}/>))}
+          </div>
+    </div>
     );
 }
 export default Buscador;

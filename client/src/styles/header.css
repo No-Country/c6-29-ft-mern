@@ -23,11 +23,12 @@
     margin: auto 0;
     width: 50%;
     object-fit: contain;
+    transition: all .3s;
 }
 
 .header-container .nav-menu-bars{
     position: relative;
-    transition: all .2s;
+    transition: all 1s;
 }
 
 .header-container img:nth-child(3) {
@@ -37,7 +38,6 @@
 
 .header-container .logo-principal{
     padding: 0;
-    width: 100%;
     transform: scale(1.6);
 }
 
