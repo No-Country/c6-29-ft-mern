@@ -6,7 +6,7 @@ module.exports ={
           const query = {};
 
           const options = {
-            populate: ['categoria'],
+            populate: ['categoria','usuarios'],
             limit: 10,
           }
           const articulosAll = await articulos.paginate(query, options)
