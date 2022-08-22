@@ -11,6 +11,7 @@ const Register = () => {
 
 const [name,setName] = useState ("");
 const [email,setEmail] = useState ("");
+const  [tel,setTel]  = useState ("")
 const [pass,setPass] = useState ("");
 const [doublePass,setDoublePass] = useState ("");
 
@@ -27,6 +28,7 @@ const [doublePass,setDoublePass] = useState ("");
                 username: name,
                 email: email,
                 password: pass,
+                telefono: tel
             };    
                console.log(object)
             const response = await fetch("http://localhost:3001/auth/registro", {
@@ -71,6 +73,7 @@ return(
         <form className="input__container" data-register-form>
             <input type="email" className="input-container__item"  placeholder="Correo electrónico" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
             <input type="text" className="input-container__item" id="user-input" placeholder="Nombre de usuario" value={name}  onChange={(e)=> setName(e.target.value)}required/>
+            <input type="text" className="input-container__item" id="tel-input" placeholder="Teléfono" value={tel}  onChange={(e)=> setTel(e.target.value)}required/>
             <input type="password" className="input-container__item" id="pass-input" placeholder="Contraseña" value={pass}  onChange={(e)=> setPass(e.target.value)} required/>
             <input type="password" className="input-container__item" id="second-pass-input" placeholder="Repetir contraseña" value={doublePass}  onChange={(e)=> setDoublePass(e.target.value)} required/>
             <button className="input-container__button" onClick={createUser}>Crear cuenta</button>
