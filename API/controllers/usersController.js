@@ -161,7 +161,7 @@ module.exports ={
         error
       })
     }
-
+5
   },
 
   favoritos: async (req,res,next) => {

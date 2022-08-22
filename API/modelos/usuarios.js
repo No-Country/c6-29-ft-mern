@@ -25,7 +25,7 @@ const UsuarioSchema = Schema({
     },
     avatar: {type : String},
     nombre: {type: String},
-    apellido: {type: String},
+    apellido: {type: String, required:true},
     telefono: {type: String},
     direccion: {type: String},
     coordenadas: {
