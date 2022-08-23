@@ -46,6 +46,7 @@ module.exports ={
           valoracion: req.body.valoracion
           
       })
+      
       const document = await articulo.save()
       console.log(req.body);
      res.status(201).json(document)

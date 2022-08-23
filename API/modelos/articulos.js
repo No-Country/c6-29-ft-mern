@@ -1,6 +1,5 @@
 const {Schema, model, default: mongoose} = require('mongoose'); 
 const mongoosePaginate = require('mongoose-paginate-v2');
-const {appConfig} = require('../config');
 const ArticulosSchema = Schema({
     usuario: {
         type:mongoose.Schema.ObjectId,
