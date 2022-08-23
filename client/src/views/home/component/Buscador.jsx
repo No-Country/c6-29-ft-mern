@@ -23,7 +23,7 @@ function Buscador ( ) {
               const res= await response.json()
               setData(res)
               const searchResults = document.querySelector("[data-search-results]")
-              if(buscar == "" || buscar.length == 0){
+              if(buscar ==="" || buscar.length === 0){
                 console.log(searchResults)
                 searchResults.style.display = "none"
               } else {
