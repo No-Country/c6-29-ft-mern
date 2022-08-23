@@ -1,9 +1,12 @@
 const express = require('express')
 require('dotenv').config()
 const cors = require('cors')
+const bodyParser = require('body-parser');
 const app = express()
 const port = 3001
 const { dbConnection } = require('./database/config');
+
+
 
 var usersRouter = require('./routes/usuarios');
 var articulosRouter =require('./routes/articulos');
@@ -19,10 +22,16 @@ database()
 
 app.use(cors());
 app.use(express.json())
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
+
 app.use('/usuarios', usersRouter);
 app.use('/articulos',articulosRouter);
 app.use('/categorias',categoriasRouter);
 app.use('/auth',authRouter);
+
+
 
 app.listen(port, () => {
   console.log(`Aplicacion escuchando en puerto ${port}`)

@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const articulosController = require('../controllers/articulosController');
 
-
 /* GET users listing. */
 router.post('/', articulosController.create);
 router.get('/buscarnombre',articulosController.getnombre);

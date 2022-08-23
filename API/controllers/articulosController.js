@@ -29,13 +29,14 @@ module.exports ={
       }
 
     },
-    create: async function(req,res,next){
+    
+    create: async function(req,res){
       try {
-      const articulo = new articulos({
+      const articulo = new articulos()({
           usuario:req.body.usuario,
           nombreArticulo: req.body.nombreArticulo,
           fechaCreacion: req.body.fechaCreacion,
-          imagen: req.body.imagen,
+          imagen:req.body.imagen,
           descripcion: req.body.descripcion,
           categoria: req.body.categoria,
           condicion: req.body.condicion,
@@ -43,10 +44,11 @@ module.exports ={
           ubicacion: req.body.ubicacion,
           estado: req.body.estado,
           valoracion: req.body.valoracion
-      })  
+          
+      })
       const document = await articulo.save()
       console.log(req.body);
-      res.status(201).json(document)  
+     res.status(201).json(document)
     } catch (error) {
         console.log(error);
       }
