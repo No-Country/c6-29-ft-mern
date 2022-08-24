@@ -3,7 +3,8 @@ import Home from './views/home/Home.jsx';
 import Login from './views/login/Login.jsx';
 import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
-
+import Subirimagen from './views/PublicarArticulo/Subirimagen.jsx';
+import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo'
 
 function App() {
   return (
