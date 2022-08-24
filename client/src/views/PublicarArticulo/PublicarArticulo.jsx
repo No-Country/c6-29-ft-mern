@@ -6,7 +6,6 @@ import Flecha from "../../img/flecha.png";
 import { Link, } from 'react-router-dom';
 import Subirimagen from './Subirimagen';
 
-
 const PublicarArticulo = ( ) => {
     const url = (result) =>{
         console.log(result);
@@ -44,6 +43,7 @@ const PublicarArticulo = ( ) => {
                 <div className="buscador-container ">
                         <img src={Ubicador} alt="search" className="search-icon"/>
                         <input type="text" className="form-control rounded-pill" placeholder="Ingresar título. Ejemplo: Silla de madera" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+
                     </div>
                 </div>
             </div>

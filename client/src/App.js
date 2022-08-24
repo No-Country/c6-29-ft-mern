@@ -14,6 +14,8 @@ function App() {
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
         <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
+
+      
       </Routes>
     </BrowserRouter>
   );
