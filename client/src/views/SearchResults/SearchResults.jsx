@@ -1,7 +1,5 @@
 import Buscador from "../home/component/Buscador.jsx"
 import PrimaryCards from "../home/component/PrimaryCards.jsx"
-import React, { useEffect, useState } from "react";
-import { render } from "@testing-library/react";
 
 export const SearchResults = ({data}) => {
 
