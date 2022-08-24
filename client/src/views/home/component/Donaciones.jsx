@@ -32,7 +32,7 @@ function Donaciones () {
           fetchData()
        }, [])
        
-       console.log(data)
+
        
     return ( 
         <div className="row justify-content-center box-donaciones">

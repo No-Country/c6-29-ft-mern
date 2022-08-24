@@ -8,13 +8,16 @@ import Donaciones from "./component/Donaciones";
 
 
 const Home = () => {
+   
+
+
     return(
         <div className="home__container">
             <Header/>
             <Buscador/>
-            {/* <Anuncio/>   */}
-            <Novedades/>
-           <Donaciones/>
+            <Anuncio/>
+            <Novedades/> 
+            <Donaciones/>
         </div>
     )
 }

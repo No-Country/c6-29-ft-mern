@@ -35,7 +35,6 @@ function Novedades ( ) {
           fetchData()
        }, [])
        
-       console.log(data)
      
        
 
