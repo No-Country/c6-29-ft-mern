@@ -4,9 +4,9 @@ import Login from './views/login/Login.jsx';
 import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
-import SearchResults from './views/SearchResults/SearchResults.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
-import Buscador from './views/home/component/Buscador.jsx';
+import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo'
+
 
 function App() {
   
