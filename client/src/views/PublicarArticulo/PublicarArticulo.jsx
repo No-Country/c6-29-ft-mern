@@ -47,14 +47,14 @@ const PublicarArticulo = ( ) => {
                     </div>
                 </div>
             </div>
-            <div className='row row-cols-1 box-Articule-Telefono mt-4'>
+            {/* <div className='row row-cols-1 box-Articule-Telefono mt-4'>
             <div className='col-8 m-2'>
                     <h3 className='title-articule'>Teléfono</h3>
                 </div>
                 <div className='col-12 mt-2'>
                     <input type="text" className="form-control rounded-pill" placeholder="Código de área + nº. Ejemplo: 011 29330724" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                 </div>
-            </div>
+            </div> */}
             <div className='row row-cols-1 box-Articule-Imagen mt-4'>
             <div className='col-8 m-2'>
                     <h3 className='title-articule'>Imágenes</h3>
