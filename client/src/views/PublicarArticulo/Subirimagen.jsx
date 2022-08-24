@@ -1,7 +1,7 @@
 import {uploadFile} from '../firebase/config'
 import {useState} from 'react'
 
-const Subirimagen = () => {
+const Subirimagen = (props) => {
 
 const [file,setFile] = useState(null)
    
@@ -10,12 +10,13 @@ const handleSubmit = async (e) =>{
     try{
         const result = await uploadFile(file)
         console.log(result);
+        props.url(result)
     } catch(error){
         console.log(error);
     }
    
    }
-   
+  
     return(
     <form onSubmit ={handleSubmit}>
      <input type="file"

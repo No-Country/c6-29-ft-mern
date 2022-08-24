@@ -8,7 +8,9 @@ import Subirimagen from './Subirimagen';
 
 
 const PublicarArticulo = ( ) => {
-
+    const url = (result) =>{
+        console.log(result);
+    }
 
     return (
         <div className='container'>
@@ -58,7 +60,7 @@ const PublicarArticulo = ( ) => {
                     <h3 className='title-articule'>Imágenes</h3>
                 </div>
                 <div className='col-12 mt-2'>
-                    <div>{<Subirimagen/>}</div>
+                    <div>{<Subirimagen url = {url} />}</div>
                 </div>
             </div>
             <div className='row row-cols-1 box-Articule-Imagen mt-4'>
