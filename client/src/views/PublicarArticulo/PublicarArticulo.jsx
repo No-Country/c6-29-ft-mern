@@ -112,7 +112,7 @@ const PublicarArticulo = ( ) => {
             </div>
             <div className='row row-cols-1 box-Articule-description'>
                 <div className='col-8 m-2'>
-                    <h3>Publicar artículo</h3>
+                    <h3>Descripcion</h3>
                 </div>
                 <div className='col-12'>
                     <input type="text" class="form-control description" placeholder="Ingresar descripción del producto." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
