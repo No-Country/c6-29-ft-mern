@@ -3,7 +3,7 @@ import Home from './views/home/Home.jsx';
 import Login from './views/login/Login.jsx';
 import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
-import Subirimagen from './views/articulos/Subirimagen';
+
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/imagen' element= { <Subirimagen/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
+        <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
       </Routes>
     </BrowserRouter>
   );
