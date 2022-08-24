@@ -63,8 +63,7 @@
     flex-wrap: wrap;
     gap: 1em;
     justify-content: center;
-    margin: 1em auto;
-    position: absolute;
+    margin: 1em auto;   
     top: 40px;
     padding: 1em;
     width: 100% ;
