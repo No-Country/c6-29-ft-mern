@@ -42,12 +42,12 @@ const PublicarArticulo = ( ) => {
                 <div className='col-12 mt-2'>
                 <div className="buscador-container ">
                         <img src={Ubicador} alt="search" className="search-icon"/>
-<<<<<<< HEAD
+
                         <input type="text" className="form-control rounded-pill" placeholder="Ingresar título. Ejemplo: Silla de madera" aria-label="Recipient's username" aria-describedby="button-addon2"/>
 
-=======
+
                         <input type="text" className="form-control rounded-pill" placeholder="Seleccionar" aria-label="Recipient's username" aria-describedby="button-addon2"/>
->>>>>>> 4a52fbe483e88632c38ee89d212f6943bd847db4
+
                     </div>
                 </div>
             </div>

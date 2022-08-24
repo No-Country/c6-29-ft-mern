@@ -20,12 +20,7 @@ function App() {
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
         <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
-<<<<<<< HEAD
-
-      
-=======
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
->>>>>>> 4a52fbe483e88632c38ee89d212f6943bd847db4
       </Routes>
     </BrowserRouter>
   );
