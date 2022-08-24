@@ -3,8 +3,8 @@ import '../../Styles/PublicarArticulo.css';
 import Ubicador from '../../img/buscador.png';
 import GsLogo from "../../img/gs-logo.png";
 import Flecha from "../../img/flecha.png";
-import PublicarImagen from './PublicarImagen';
 import { Link, } from 'react-router-dom';
+import Subirimagen from './Subirimagen';
 
 
 const PublicarArticulo = ( ) => {
@@ -58,7 +58,7 @@ const PublicarArticulo = ( ) => {
                     <h3 className='title-articule'>Imágenes</h3>
                 </div>
                 <div className='col-12 mt-2'>
-                    <div>{PublicarImagen}</div>
+                    <div>{<Subirimagen/>}</div>
                 </div>
             </div>
             <div className='row row-cols-1 box-Articule-Imagen mt-4'>
