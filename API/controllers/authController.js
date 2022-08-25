@@ -8,7 +8,7 @@ const Usuario = require('../modelos/usuarios');
 
 module.exports = {
     registro : async (req,res) => {
-        const {username, email, password} = req.body;
+        const {username, email, password,telefono} = req.body;
 
         const user = await Usuario.find({email:email});
 
@@ -20,7 +20,7 @@ module.exports = {
             })
         }
 
-        const newUser = new Usuario({username, email, password})
+        const newUser = new Usuario({username, email, password,telefono})
 
         //encrypting the password
         const salt = bcryptjs.genSaltSync(10);
