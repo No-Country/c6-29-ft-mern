@@ -2,7 +2,6 @@ import '../../../Styles/Buscador.css';
 import { Link } from "react-router-dom";
 import searchIcon from "../../../img/IconoBuscar.svg"
 import filterIcon from "../../../img/botonFiltro.png"
-import SearchResults from "../../SearchResults/SearchResults";
 
 function Buscador ({buscar,showResults,handleBuscar}) {
 
