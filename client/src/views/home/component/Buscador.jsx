@@ -18,7 +18,7 @@ function Buscador ({buscar,showResults,handleBuscar}) {
         <div className="search-filter__container">
           <div className="buscador-container">
               <Link to="/searchPage" onClick={setLocalValue} ><img src={searchIcon} alt="search" className="search-icon" /></Link>
-            <input type="text" value={buscar} onChange={handleBuscar}  data-search-bar></input>
+            <input type="text" defaultValue={buscar} onChange={handleBuscar}  data-search-bar></input>
           </div>
           <div className="filter-button__container">
               <img src={filterIcon} className="filter-button__button" alt="Filtrar" />
