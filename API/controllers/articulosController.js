@@ -39,11 +39,13 @@ module.exports ={
           imagen:req.body.imagen,
           descripcion: req.body.descripcion,
           categoria: req.body.categoria,
-          condicion: req.body.condicion,
+          dimension:req.body.dimension,
           precio: req.body.precio,
           ubicacion: req.body.ubicacion,
           estado: req.body.estado,
-          valoracion: req.body.valoracion
+          valoracion: req.body.valoracion,
+          material:req.body.material,
+          unidades: req.body.unidades
           
       })
       
