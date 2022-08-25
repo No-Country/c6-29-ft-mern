@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PublicarArticulo from "./PublicarArticulo";
 
-function Categorias ( ) {
+function Categorias () {
 
   
     const [data,setData] = useState([]);
@@ -33,10 +33,11 @@ function Categorias ( ) {
      console.log(data);  
 
     return ( 
+
             <div>
-
-                {data.map((e)=> (<PublicarArticulo key={e._id} categoryName={e.nombre} />))}
-
+              <select className="form-select rounded-pill" id="inputGroupSelect01" aria-label="Sizing example input" defaultValue="Categoria">
+                {data.map((e)=> <option key={e._id} defaultValue={e._id}>{e.nombre}</option>)}
+              </select>
             </div>
     );
 }

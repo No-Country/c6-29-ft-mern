@@ -7,7 +7,7 @@ import { Link, } from 'react-router-dom';
 import Subirimagen from './Subirimagen';
 import Categorias from './Categorias';
 
-const PublicarArticulo = ({categoryName,key}) => {
+const PublicarArticulo = () => {
     const url = (result) =>{
         console.log(result);
     }
@@ -124,10 +124,7 @@ const PublicarArticulo = ({categoryName,key}) => {
                     <h3>Categoría</h3>
                 </div>
                 <div className='col-12'>
-                    <select className="form-select rounded-pill" id="inputGroupSelect01" aria-label="Sizing example input" defaultValue="Categoria">
-
-                        <option defaultValue={key}>{categoryName}</option>
-                    </select>
+                    <Categorias/>
                 </div>
                 <div className='row mt-4'>
                 <div className='col-1'>
