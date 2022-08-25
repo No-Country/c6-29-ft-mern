@@ -5,8 +5,9 @@ import GsLogo from "../../img/gs-logo.png";
 import Flecha from "../../img/flecha.png";
 import { Link, } from 'react-router-dom';
 import Subirimagen from './Subirimagen';
+import Categorias from './Categorias';
 
-const PublicarArticulo = ( ) => {
+const PublicarArticulo = ({categoryName,key}) => {
     const url = (result) =>{
         console.log(result);
     }
@@ -37,16 +38,16 @@ const PublicarArticulo = ( ) => {
             </div>
             <div className='row row-cols-1 box-Articule-Ubicacion'>
             <div className='col-8 m-2'>
-                    <h3 className='title-articule'>Ubicación</h3>
+                    <h3 className='title-articule'>Ubicación</h3><img src={Ubicador} alt="search" className="search-icon"/>
                 </div>
                 <div className='col-12 mt-2'>
                 <div className="buscador-container ">
-                        <img src={Ubicador} alt="search" className="search-icon"/>
+                        
 
-                        <input type="text" className="form-control rounded-pill" placeholder="Ingresar título. Ejemplo: Silla de madera" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                        <input type="text" className="form-control rounded-pill" placeholder="Provincia" aria-label="Recipient's username" aria-describedby="button-addon2"/>
 
 
-                        <input type="text" className="form-control rounded-pill" placeholder="Seleccionar" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                        <input type="text" className="form-control rounded-pill" placeholder="Localidad" aria-label="Recipient's username" aria-describedby="button-addon2"/>
 
                     </div>
                 </div>
@@ -61,7 +62,7 @@ const PublicarArticulo = ( ) => {
             </div> */}
             <div className='row row-cols-1 box-Articule-Imagen mt-4'>
             <div className='col-8 m-2'>
-                    <h3 className='title-articule'>Imágenes</h3>
+                    <h3 className='title-articule'>Imágen</h3>
                 </div>
                 <div className='col-12 mt-2'>
                     <div>{<Subirimagen url = {url} />}</div>
@@ -105,7 +106,7 @@ const PublicarArticulo = ( ) => {
                     </div>
                     <div className='col-5'>
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control rounded-pill" placeholder="Ingresar material" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                            <input type="text" className="form-control rounded-pill" placeholder="Unidades" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                         </div>
                     </div>
                 </div>
@@ -115,7 +116,7 @@ const PublicarArticulo = ( ) => {
                     <h3>Descripcion</h3>
                 </div>
                 <div className='col-12'>
-                    <input type="text" class="form-control description" placeholder="Ingresar descripción del producto." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                    <input type="text" className="form-control description" placeholder="Ingresar descripción del producto." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
                 </div>
             </div>
             <div className='row row-cols-1 box-Articule-categoria'>
@@ -123,16 +124,14 @@ const PublicarArticulo = ( ) => {
                     <h3>Categoría</h3>
                 </div>
                 <div className='col-12'>
-                    <select class="form-select rounded-pill" id="inputGroupSelect01" aria-label="Sizing example input">
-                        <option selected>Seleccionar categoría</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select className="form-select rounded-pill" id="inputGroupSelect01" aria-label="Sizing example input" defaultValue="Categoria">
+
+                        <option defaultValue={key}>{categoryName}</option>
                     </select>
                 </div>
                 <div className='row mt-4'>
                 <div className='col-1'>
-                    <input type="checkbox" name="vehicle1" value="Bike"/>
+                    <input type="checkbox" name="vehicle1" defaultValue="Bike"/>
                 </div>
                 <div className='col-8 mt-1'>
                     <p className='pd'>Quiero donar este producto</p>
@@ -144,7 +143,7 @@ const PublicarArticulo = ( ) => {
                     <h3>Precio</h3>
                 </div>
                 <div className='col-12'>
-                    <input type="text" class="form-control rounded-pill" placeholder="Ingresar precio sin puntos ni comas" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                    <input type="number" className="form-control rounded-pill" placeholder="0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
                 </div>
             </div>
             <div className='row row-cols-1 mt-2  justify-content-center box-Articule-button'>
