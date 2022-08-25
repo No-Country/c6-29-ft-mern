@@ -15,21 +15,23 @@ const ArticulosSchema = Schema({
         type:mongoose.Schema.ObjectId,
         ref:"Categoria"
     },
-    condicion:{
-        type : String,
-        default: 'USADO'
-    },
     precio:{type:Number,
             min:0,
             required:true},
     ubicacion:{
-        latitud: {type: Number},
-        longitud: {type: Number}},
+        provincia: {type: String},
+        localidad: {type: String}},
     estado:{
         type:String,
         emun: ['ACTIVO', 'PAUSADO', 'FINALIZADO'],
         default: 'ACTIVO'},
-    valoracion:{type:Number}
+    valoracion:{type:Number},
+    dimension:{
+        alto:{type:String},
+        ancho:{type:String}
+    },
+    material:{type:String},
+    unidades:{type:String}
 })
 
 ArticulosSchema.plugin(mongoosePaginate)
