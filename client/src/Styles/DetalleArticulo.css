@@ -35,3 +35,27 @@
   .pagination {
     background-color: #912E1C;
   }
+  h4 {
+    font-family: Kumbh Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.84px;
+  }
+  .instrucciones {
+    font-family: Kumbh Sans;
+    font-size: 12px;
+    line-height: 14.88px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .instrucciones__precio {
+    margin-bottom: 0;
+    font-family: Kumbh Sans;
+    font-size: 12px;
+    line-height: 14.88px;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 16px;
+    font-weight: 700;
+  }
