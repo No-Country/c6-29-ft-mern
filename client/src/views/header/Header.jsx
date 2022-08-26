@@ -18,7 +18,19 @@ import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
 import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
+<<<<<<< HEAD
 const Header = () => {
+=======
+const Header = (props) => {
+    const{login} = props
+    const token = localStorage.getItem("token");
+    let userConnected;
+    if(token == "" || token == undefined || token == null){
+        userConnected = false;
+    } else {
+        userConnected = true;
+    }
+>>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -46,46 +58,52 @@ const Header = () => {
         
         }
 
-    /// FUNCION QUE MUESTRA Y ANIMA EL MENU PROFILE
-
-    const showProfileMenu = () =>{
-        const profileMenu = document.querySelector("[data-profile-menu]");
-
-        if(profileMenu.classList.contains("visible")){
-            
-            profileMenu.style.opacity = 0
-            setTimeout(() => {
-                profileMenu.classList.remove("visible");
-            },1000)
-        } else {
-            profileMenu.classList.add("visible")
-            setTimeout(() => {
-                profileMenu.style.opacity = 1
-            },100)
-        }
-        }
-
+    
     return(
         <div className="header-container" data-header-container>
             <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
             <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>
+<<<<<<< HEAD
             <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>            
+=======
+            <img src={UserLogo}  alt="imagen" data-profile/>
+            
+>>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
+                   {!userConnected &&
+                   <>
+                   <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
+                    <li className="list__items"><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={VendedoresCercaIcon}/>Vendedores cerca de mí</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
+                    
+                   </>
+                   }
+                   {userConnected &&
+                   <>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={CloseSessionIcon}/>Cerrar sesión</Link></li>
+                   </>
+                    }   
+                   
+                    
                 </ul>
             </div>
             
+<<<<<<< HEAD
             <div className="nav-menu__container" data-profile-menu> 
                 <ul className="container__list">
                     <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
@@ -94,6 +112,8 @@ const Header = () => {
                    <li className="list__items"><Link to='/'>Contacto</Link></li>
                 </ul>
             </div>
+=======
+>>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
         </div>        
     )
 }
