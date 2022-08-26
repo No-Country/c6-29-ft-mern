@@ -7,9 +7,26 @@ import { Link, } from 'react-router-dom';
 import Subirimagen from './Subirimagen';
 import Categorias from './Categorias';
 import { useState } from "react";
+
+
 const PublicarArticulo = () => {
+
+    const parseJwt = () => {
+        try {
+          return JSON.parse(atob(token.split('.')[1]));
+        } catch (e) {
+          return null;
+        }
+      };
+
 const token = localStorage.getItem("token");
-const [usuario,setUsuario] = useState (token);    
+const decoded = parseJwt();
+console.log(decoded.userId)
+
+
+
+
+const [usuario,setUsuario] = useState (decoded.userId);    
 const [nombre,setNombre] = useState ("");
 const [fecha,setFecha] = useState (new Date());
 const [url,setUrl] = useState ("");
