@@ -5,6 +5,7 @@ import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
+import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/vermas' element= { <VerMas/> }></Route>
         <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
+        <Route path='/detallearticulo' element= {<DetalleArticulo/>}></Route>
       </Routes>
     </BrowserRouter>
   );
