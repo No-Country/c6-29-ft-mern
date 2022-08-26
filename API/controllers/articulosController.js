@@ -32,7 +32,7 @@ module.exports ={
     
     create: async function(req,res){
       try {
-      const articulo = new articulos()({
+      const articulo = new articulos({
           usuario:req.body.usuario,
           nombreArticulo: req.body.nombreArticulo,
           fechaCreacion: req.body.fechaCreacion,
@@ -45,8 +45,7 @@ module.exports ={
           estado: req.body.estado,
           valoracion: req.body.valoracion,
           material:req.body.material,
-          unidades: req.body.unidades
-          
+          unidades: req.body.unidades, 
       })
       
       const document = await articulo.save()

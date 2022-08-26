@@ -8,7 +8,7 @@ const ArticulosSchema = Schema({
     nombreArticulo: {type: String, required: true},
     fechaCreacion: {type:Date, default:Date.now},
     imagen:{
-        type:Array
+        type:String
     },
     descripcion:{type: String},
     categoria:{
