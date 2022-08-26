@@ -8,10 +8,10 @@ import Subirimagen from './Subirimagen';
 import Categorias from './Categorias';
 import { useState } from "react";
 const PublicarArticulo = () => {
-    
-const [usuario,setUsuario] = useState ("");    
+const token = localStorage.getItem("token");
+const [usuario,setUsuario] = useState (token);    
 const [nombre,setNombre] = useState ("");
-const [fecha,setFecha] = useState ("");
+const [fecha,setFecha] = useState (new Date());
 const [url,setUrl] = useState ("");
 const  [descripcion,setDescripcion]  = useState ("")
 const [categoria,setCategoria] = useState ("");
@@ -23,11 +23,8 @@ const [ancho,setAncho] = useState ("");
 const [material,setMaterial] = useState ("");
 const [unidades,setUnidades] = useState ("");
 
-
-
     const createArticulo = async (e) => {
        e.preventDefault();
- 
            try {
             const object = {
                 usuario: usuario,//aca iria id de usuario que traigo con el token._id,
@@ -35,7 +32,7 @@ const [unidades,setUnidades] = useState ("");
                 fechaCreacion: fecha,//aca tendria que tomar la fecha de la compu con date()
                 imagen:url,
                 descripcion:descripcion,
-                categoria:categoria,
+                categoria: categoria,
                 precio: precio,
                 ubicacion:{
                     provincia:provincia,
@@ -65,10 +62,29 @@ const [unidades,setUnidades] = useState ("");
           }
          }    
 
-   // const url = (result) =>{
-     //   console.log();
-    //}
+         const  getCategory = () => {
+            const selectedCategory = document.querySelector("[data-select-category]").value
+            const categoryOption = document.querySelectorAll("option");
+            categoryOption.forEach((e) =>{
+              if(selectedCategory == e.label){
+                setCategoria(e.id)
+              }
+            } )
+           }
 
+          const getImgUrl = () => {
+            const imgInput = document.querySelector("[data-img-input]")
+            setUrl(imgInput.name)
+            console.log(imgInput.name)
+            }
+
+        const getUserID = () => {
+            const token = localStorage.getItem("token")
+            return token
+        }
+    
+        
+            
   return (
         <div className='container'>
             <div className='row justify-content-between box-header m-3'>
@@ -109,20 +125,13 @@ const [unidades,setUnidades] = useState ("");
                     </div>
                 </div>
             </div>
-            {/* <div className='row row-cols-1 box-Articule-Telefono mt-4'>
-            <div className='col-8 m-2'>
-                    <h3 className='title-articule'>Teléfono</h3>
-                </div>
-                <div className='col-12 mt-2'>
-                    <input type="text" className="form-control rounded-pill" placeholder="Código de área + nº. Ejemplo: 011 29330724" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-                </div>
-            </div> */}
+          
             <div className='row row-cols-1 box-Articule-Imagen mt-4'>
             <div className='col-8 m-2'>
                     <h3 className='title-articule'>Imágen</h3>
                 </div>
                 <div className='col-12 mt-2'>
-                    <div>{<Subirimagen url = {url} />}</div>
+                    <div>{<Subirimagen url = {url}  getImgUrl={getImgUrl}/>}</div>
 
                 </div>
             </div>
@@ -182,7 +191,7 @@ const [unidades,setUnidades] = useState ("");
                     <h3>Categoría</h3>
                 </div>
                 <div className='col-12'>
-                    <Categorias/>
+                    <Categorias getCategory={getCategory}/>
                 </div>
                 <div className='row mt-4'>
                 <div className='col-1'>
@@ -203,7 +212,7 @@ const [unidades,setUnidades] = useState ("");
             </div>
             <div className='row row-cols-1 mt-2  justify-content-center box-Articule-button'>
                 <div className='col-12 m-3'>
-                    <button className='btn  rounded-pill btn-publicar'onClick={createArticulo()}>Publicar</button>
+                    <button className='btn  rounded-pill btn-publicar'onClick={createArticulo}>Publicar</button>
                 </div>
             </div>
         </div>
