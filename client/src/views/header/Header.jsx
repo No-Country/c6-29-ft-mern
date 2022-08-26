@@ -18,7 +18,8 @@ import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
 import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
-const Header = () => {
+const Header = (props) => {
+    const{login} = props
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -73,14 +74,14 @@ const Header = () => {
             
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
-                    <li className="list__items"><Link to='/login'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={VendedoresCercaIcon}/>Vendedores cerca de mí</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
+                    <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={CloseSessionIcon}/>Cerrar sesión</Link></li>
@@ -91,8 +92,9 @@ const Header = () => {
                 <ul className="container__list">
                     <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
                     <li className="list__items"><Link to= '/register'>Registrarse</Link></li>
-                    <li className="list__items"><Link to='/'>Donar</Link></li>
-                    <li className="list__items"><Link to='/'>Contacto</Link></li>
+                    <li className="list__items"><Link to='/publicar'>Donar</Link></li>
+                    
+                   <li className="list__items"><Link to='/'>Contacto</Link></li>
                 </ul>
             </div>
         </div>        

@@ -6,12 +6,7 @@ import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
 
-
-
 function App() {
-  
-  
-
   return (
     <BrowserRouter>
       <Routes>
