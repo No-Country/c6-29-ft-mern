@@ -18,8 +18,7 @@ import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
 import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
-const Header = (props) => {
-    const{login} = props
+const Header = () => {
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -70,8 +69,7 @@ const Header = (props) => {
         <div className="header-container" data-header-container>
             <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
             <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>
-            <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>
-            
+            <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>            
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
@@ -93,7 +91,6 @@ const Header = (props) => {
                     <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
                     <li className="list__items"><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/publicar'>Donar</Link></li>
-                    
                    <li className="list__items"><Link to='/'>Contacto</Link></li>
                 </ul>
             </div>

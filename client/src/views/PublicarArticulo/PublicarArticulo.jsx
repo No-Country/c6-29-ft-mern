@@ -9,6 +9,7 @@ import Categorias from './Categorias';
 import { useState } from "react";
 const PublicarArticulo = () => {
 const token = localStorage.getItem("token");
+console.log(token);
 const [usuario,setUsuario] = useState (token);    
 const [nombre,setNombre] = useState ("");
 const [fecha,setFecha] = useState (new Date());
