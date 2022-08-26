@@ -7,8 +7,6 @@ import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
 import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
 
-
-
 function App() {
   return (
     <BrowserRouter>

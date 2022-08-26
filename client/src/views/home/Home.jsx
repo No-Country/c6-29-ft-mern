@@ -6,11 +6,7 @@ import Novedades from "./component/Novedades";
 import '../../Styles/Home.css';
 import Donaciones from "./component/Donaciones";
 
-
 const Home = () => {
-   
-
-
     return(
         <div className="home__container">
             <Header/>

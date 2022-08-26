@@ -7,8 +7,8 @@ import "../../Styles/login-register.css"
 import { useState}  from "react"
 
 
-const Login = () => {
-
+const Login = (props) => {
+    const {setLogin} = props
     const [email,setEmail] = useState ("");
     const [pass,setPass] = useState ("");
 
@@ -28,7 +28,7 @@ const Login = () => {
               body:JSON.stringify(object),
             });
             const res = await response.json()
-            
+            setLogin(true)
             .then((result)=>{
                 console.log(result)
                 localStorage.setItem('token',result.token)
@@ -36,6 +36,7 @@ const Login = () => {
             })
           
             return res
+           
     } catch (error){
         console.log(error)
     }
