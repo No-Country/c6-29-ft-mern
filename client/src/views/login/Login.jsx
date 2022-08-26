@@ -4,14 +4,14 @@ import GoogleLogo from "../../img/google-logo.png"
 import GsLogo from "../../img/gs-logo.png"
 import returnButton from "../../img/return.svg"
 import "../../Styles/login-register.css"
-import { useState,useContext}  from "react"
-import AuthContext from "../../context/AuthContext"
+import { useState}  from "react"
+
 
 const Login = () => {
 
     const [email,setEmail] = useState ("");
     const [pass,setPass] = useState ("");
-    const context = useContext(AuthContext)
+
     const validateUser = async (e) => {
         e.preventDefault();
         try {
@@ -34,7 +34,7 @@ const Login = () => {
                 localStorage.setItem('token',result.token)
                 window.location.pathname = "/";
             })
-          context.loginUser()
+          
             return res
     } catch (error){
         console.log(error)

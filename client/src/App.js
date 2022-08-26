@@ -5,7 +5,6 @@ import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
-import AuthProvider from './context/AuthProvider.js';
 
 
 
@@ -14,7 +13,6 @@ function App() {
   
 
   return (
-    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path='/' element= { <Home/> }></Route>
@@ -25,7 +23,6 @@ function App() {
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
       </Routes>
     </BrowserRouter>
-    </AuthProvider>
   );
 }
 
