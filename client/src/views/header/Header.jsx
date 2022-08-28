@@ -18,9 +18,9 @@ import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
 import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
-<<<<<<< HEAD
-const Header = () => {
-=======
+
+
+
 const Header = (props) => {
     const{login} = props
     const token = localStorage.getItem("token");
@@ -30,7 +30,7 @@ const Header = (props) => {
     } else {
         userConnected = true;
     }
->>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
+
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -62,13 +62,9 @@ const Header = (props) => {
     return(
         <div className="header-container" data-header-container>
             <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
-            <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>
-<<<<<<< HEAD
-            <img src={UserLogo} onClick={showProfileMenu} alt="imagen" data-profile/>            
-=======
+            <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>       
             <img src={UserLogo}  alt="imagen" data-profile/>
             
->>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
                    {!userConnected &&
@@ -103,7 +99,7 @@ const Header = (props) => {
                 </ul>
             </div>
             
-<<<<<<< HEAD
+
             <div className="nav-menu__container" data-profile-menu> 
                 <ul className="container__list">
                     <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
@@ -112,8 +108,7 @@ const Header = (props) => {
                    <li className="list__items"><Link to='/'>Contacto</Link></li>
                 </ul>
             </div>
-=======
->>>>>>> eb9a445a26956320c8584c990edeb2eaa56acb11
+
         </div>        
     )
 }
