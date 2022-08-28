@@ -11,7 +11,6 @@ import FavIcon from "../../img/burger-menu-icons/favorite-icon.svg";
 import NewsIcon from "../../img/burger-menu-icons/news-icon.svg";
 import OffersIcon from "../../img/burger-menu-icons/offers-icon.svg";
 import DonacionesIcon from "../../img/burger-menu-icons/donaciones-icon.svg";
-import VendedoresCercaIcon from "../../img/burger-menu-icons/ventas-cercanas-icon.svg";
 import NewPubIcon from "../../img/burger-menu-icons/crear-publicacion-icon.svg";
 import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
 import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
@@ -21,8 +20,7 @@ import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
 
 
-const Header = (props) => {
-    const{login} = props
+const Header = () => {
     const token = localStorage.getItem("token");
     let userConnected;
     if(token == "" || token == undefined || token == null){
