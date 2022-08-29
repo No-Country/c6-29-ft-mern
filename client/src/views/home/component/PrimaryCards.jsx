@@ -10,7 +10,7 @@ export const PrimaryCards = ({imgURL,productName,productLocation,id}) => {
                             </div>
                             
                             <div className="primary__card__text-container">
-                                <Link to={'/detallearticulo/'+ id}> <h5 className="text-container__title">{productName}</h5></Link>
+                                <Link  className="text-container__title" to={'/detallearticulo/'+ id}> <h5 className="text-container__title">{productName}</h5></Link>
                                 <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">{productLocation}</small></p> 
                             </div>
                         </div>
