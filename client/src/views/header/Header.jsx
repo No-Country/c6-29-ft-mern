@@ -24,7 +24,7 @@ import RegisterIcon from "../../img/burger-menu-icons/registro-icon.svg"
 const Header = () => {
     const token = localStorage.getItem("token");
     let userConnected;
-    if(token == "" || token == undefined || token == null){
+    if(token === "" || token === undefined || token == null){
         userConnected = false;
     } else {
         userConnected = true;
