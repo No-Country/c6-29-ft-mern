@@ -20,8 +20,7 @@ import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
 
 
 
-const Header = (props) => {
-    const{login} = props
+const Header = () => {
     const token = localStorage.getItem("token");
     let userConnected;
     if(token == "" || token == undefined || token == null){
