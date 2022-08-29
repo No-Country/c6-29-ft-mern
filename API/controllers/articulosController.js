@@ -56,9 +56,14 @@ module.exports ={
       }
     },
     getById: async function(req,res,next){
+      
+      const query = {};
+      const options = {
+        populate: ['categoria','usuario'],
+      }
       console.log(req.params.id);
       try {
-        const articulo = await articulos.findById(req.params.id)        
+        const articulo = await articulos.findById(req.params.id,query,options)        
         res.status(200).json(articulo)
       } catch (error) {
         console.log(error);
