@@ -1,4 +1,3 @@
-import Buscador from "../home/component/Buscador.jsx"
 import PrimaryCards from "../home/component/PrimaryCards.jsx"
 
 export const SearchResults = ({data}) => {
