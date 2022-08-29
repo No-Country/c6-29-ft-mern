@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../../Styles/DetalleArticulo.css';
 import corazon from '../../img/Heart.png';
 import ScrollImg from './components/ScrollImg'
