@@ -8,8 +8,21 @@ import SearchPage from './views/SearchResults/SearchPage.jsx';
 import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
 
 function App() {
+
+  const disableOverFlow = () => {
+    const body = document.querySelector("body");
+    if(window.location.pathname == "/register"  && window.innerWidth > 1024 || window.location.pathname == "/login"   && window.innerWidth > 1024){
+        body.style.overflow = "hidden"
+    } else {
+        body.style.overflow = "auto"
+    }
+}
+
+window.addEventListener("load", disableOverFlow)
+
+
   return (
-    
+  
     <BrowserRouter>
       <Routes>
         <Route path='/' element= { <Home/> }></Route>

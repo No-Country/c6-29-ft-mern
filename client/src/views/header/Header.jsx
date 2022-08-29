@@ -11,7 +11,6 @@ import FavIcon from "../../img/burger-menu-icons/favorite-icon.svg";
 import NewsIcon from "../../img/burger-menu-icons/news-icon.svg";
 import OffersIcon from "../../img/burger-menu-icons/offers-icon.svg";
 import DonacionesIcon from "../../img/burger-menu-icons/donaciones-icon.svg";
-import VendedoresCercaIcon from "../../img/burger-menu-icons/ventas-cercanas-icon.svg";
 import NewPubIcon from "../../img/burger-menu-icons/crear-publicacion-icon.svg";
 import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
 import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
@@ -58,6 +57,10 @@ const Header = (props) => {
         
         }
 
+        const closeSession = () => {
+            localStorage.removeItem("token");
+            window.location.reload();
+        }
     
     return(
         <div className="header-container" data-header-container>
@@ -91,7 +94,7 @@ const Header = (props) => {
                     <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={CloseSessionIcon}/>Cerrar sesión</Link></li>
+                    <li className="list__items"><img className="items__icon" src={CloseSessionIcon} onClick={closeSession}/>Cerrar sesión</li>
                    </>
                     }   
                    

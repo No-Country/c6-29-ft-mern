@@ -96,11 +96,7 @@ const [unidades,setUnidades] = useState ("");
             console.log(imgInput.name)
             }
 
-        const getUserID = () => {
-            const token = localStorage.getItem("token")
-            return token
-        }
-    
+            
         
             
   return (
@@ -213,7 +209,7 @@ const [unidades,setUnidades] = useState ("");
                 </div>
                 <div className='row mt-4'>
                 <div className='col-1'>
-                    <input type="checkbox" name="vehicle1" defaultValue="Bike"/>
+                    <input type="checkbox" name="donacion" />
                 </div>
                 <div className='col-8 mt-1'>
                     <p className='pd'>Quiero donar este producto</p>
@@ -225,7 +221,7 @@ const [unidades,setUnidades] = useState ("");
                     <h3>Precio</h3>
                 </div>
                 <div className='col-12'>
-                    <input type="number" value={precio} onChange={(e)=> setPrecio(e.target.value)} className="form-control rounded-pill" placeholder="0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                    <input type="number" value={precio} onChange={(e)=> setPrecio(e.target.value)} className="form-control rounded-pill" placeholder="0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" data-price-input/>
                 </div>
             </div>
             <div className='row row-cols-1 mt-2  justify-content-center box-Articule-button'>
