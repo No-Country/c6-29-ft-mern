@@ -6,6 +6,7 @@ import checkDone from "../../img/check.png"
 import returnButton from "../../img/return.svg"
 import { useState } from "react";
 import {Link} from 'react-router-dom';
+import ilustracion from "../../img/ilustracion.png"
 
 const Register = () => {
 
@@ -63,7 +64,19 @@ const showRegisterMessage = () =>{
     console.log(message);
 }
 
-return(
+
+return(  
+
+    <div className="login__container__general">
+        <div className="login__brand">
+            <h4 className="login__brand-title">Vendé productos que ya no usas, desde tu casa</h4>
+            <img src={ilustracion} alt="" className="login__brand-img" />
+            <div className="login__brand-semicircle">
+                <img src={GsLogo} alt="" className="semicircle__logo"/>
+            </div>
+        </div>
+        
+        <div className="login__functional">
     <div className="login__container" data-register-container>
         <div className="login__logo-container">
             <img src={returnButton} onClick={handleReturn} className="return-button" alt="" />
@@ -97,6 +110,9 @@ return(
                 <Link to="/login" ><button className="message-container__button">Iniciar Sesion</button></Link>
             </div>
         </div>
+    </div>
+    </div>
+    
     </div>
 )
 

@@ -1,15 +1,18 @@
 import Pin from '../../../img/Pin.png';
 import "../../../Styles/Secondary-cards.css"
+import {showDetails} from "../../../App.js"
+import { Link } from 'react-router-dom';
+export const SecondaryCards = ({imgURL,productName,productLocation,productPrice,id}) => {
 
-export const SecondaryCards = ({imgURL,productName,productLocation,productPrice}) => {
+    
     return(
                             <div className="card-container">
                                     <div className="card__img-container">
-                                        <img src= {imgURL} className="img-container__img" alt="producto"/>
+                                        <Link to={'/detallearticulo/'+ id}><img src= {imgURL} className="img-container__img" alt="producto"/></Link>
                                     </div>
                                     
                                     <div className="card__text-container">
-                                        <h6 className="card-title">{productName}</h6>
+                                    <Link to={'/detallearticulo/'+ id}> <h6 className="card-title">{productName}</h6></Link>
                                         <p className="card-text "><img src={ Pin } alt="pin"/><small className="ubication">{productLocation}</small></p>    
                                         <p className="price card-text">{productPrice}</p>
                                     </div>

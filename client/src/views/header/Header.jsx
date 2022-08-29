@@ -16,7 +16,8 @@ import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
 import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
 import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
 import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
-
+import LoginIcon from "../../img/burger-menu-icons/login-icon.svg"
+import RegisterIcon from "../../img/burger-menu-icons/registro-icon.svg"
 
 
 
@@ -56,6 +57,10 @@ const Header = () => {
         
         }
 
+        const closeSession = () => {
+            localStorage.removeItem("token");
+            window.location.reload();
+        }
     
     return(
         <div className="header-container" data-header-container>
@@ -67,8 +72,8 @@ const Header = () => {
                 <ul className="container__list">
                    {!userConnected &&
                    <>
-                   <li className="list__items"><Link to='/login'>Iniciar Sesión</Link></li>
-                    <li className="list__items"><Link to= '/register'>Registrarse</Link></li>
+                    <li className="list__items"><img className="items__icon" src={LoginIcon}/><Link to='/login'>Iniciar Sesión</Link></li>
+                    <li className="list__items"><img className="items__icon" src={RegisterIcon}/><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
@@ -89,7 +94,7 @@ const Header = () => {
                     <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={CloseSessionIcon}/>Cerrar sesión</Link></li>
+                    <li className="list__items"><img className="items__icon" src={CloseSessionIcon} onClick={closeSession}/>Cerrar sesión</li>
                    </>
                     }   
                    
