@@ -6,7 +6,7 @@ module.exports ={
           const query = {};
 
           const options = {
-            populate: ['categoria','usuarios'],
+            populate: ['categoria','usuario'],
             limit: 10,
           }
           const articulosAll = await articulos.paginate(query, options)
@@ -88,7 +88,7 @@ module.exports ={
     getRecientes: async function(req,res,next){
       const fechaActual = new Date();
       const ultimoMes = new Date(fechaActual.setMonth(fechaActual.getMonth() - 1)); 
-
+      
       try {
 
         const articulosRecientes = await articulos.find({
