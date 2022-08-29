@@ -14,7 +14,6 @@ function DetalleArticulo() {
 const id = useParams();
 
 const [data,setData] = useState();
-const [productos,setProductos] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,7 +35,7 @@ const [productos,setProductos] = useState({});
             }
           };
           fetchData();
-       }, [])
+       }, [id])
 
        console.log(data)
 
