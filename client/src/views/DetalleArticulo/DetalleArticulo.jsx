@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import React from 'react'
-=======
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react';
->>>>>>> 04f7fc782bb1cd7b1e488e6a3f3d91aba496aeec
 import '../../Styles/DetalleArticulo.css';
 import corazon from '../../img/Heart.png';
 import ScrollImg from './components/ScrollImg'
