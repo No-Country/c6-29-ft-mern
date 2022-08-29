@@ -31,7 +31,7 @@ window.addEventListener("load", disableOverFlow)
         <Route path='/vermas' element= { <VerMas/> }></Route>
         <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
-        <Route path='/detallearticulo' element= {<DetalleArticulo/>}></Route>
+        <Route path='/detallearticulo/:id' element= {<DetalleArticulo/>}></Route>
       </Routes>
     </BrowserRouter>
   );

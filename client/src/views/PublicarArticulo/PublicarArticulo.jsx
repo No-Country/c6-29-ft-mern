@@ -72,12 +72,15 @@ const [unidades,setUnidades] = useState ("");
               },
                 body:JSON.stringify(object),
             });
+            window.location.pathname =  "/"
             const res = await response.json();
             return res;
           } catch (error) {
         
             console.log(error);
           }
+
+          
          }    
 
          const  getCategory = () => {

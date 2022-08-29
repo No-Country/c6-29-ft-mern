@@ -50,7 +50,7 @@ function Novedades ( ) {
             </div>
             <div className="card-container-novedades">
 
-                {data.map((e)=> (<SecondaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.provincia + "," + e.ubicacion.localidad} productPrice={"$" + e.precio}/>))}
+                {data.map((e)=> (<SecondaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.provincia + "," + e.ubicacion.localidad} productPrice={"$" + e.precio} id={e._id}/>))}
 
             </div>
         </div>
