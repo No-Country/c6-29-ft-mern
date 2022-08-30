@@ -25,7 +25,7 @@ const handleSubmit = async (e) =>{
     <form onSubmit ={handleSubmit}>
      <input type="file"
       name= "" id = ""
-       onChange={(e)=> setFile(e.target.files[0])} data-img-input/>
+       onChange={(e)=>setFile(e.target.files[0])} data-img-input/>
        <button>Upload</button>
     </form>
 )

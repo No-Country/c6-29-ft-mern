@@ -11,7 +11,7 @@ function App() {
 
   const disableOverFlow = () => {
     const body = document.querySelector("body");
-    if(window.location.pathname == "/register"  && window.innerWidth > 1024 || window.location.pathname == "/login"   && window.innerWidth > 1024){
+    if(window.location.pathname === "/register"  && window.innerWidth > 1024 || window.location.pathname === "/login"   && window.innerWidth > 1024){
         body.style.overflow = "hidden"
     } else {
         body.style.overflow = "auto"
