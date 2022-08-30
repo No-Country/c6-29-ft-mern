@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './views/home/Home.jsx';
+import HomeDesktop from "./views/home/HomeDesktop"
 import Login from './views/login/Login.jsx';
 import Register from './views/register/Register.jsx'
 import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
 import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
+import ReactDOM from "react-dom/client" 
+import { unmountComponentAtNode } from 'react-dom';
+import {createRoot} from "react-dom/client"
 
 function App() {
 
@@ -18,14 +22,30 @@ function App() {
     }
 }
 
+var mediaQuery = window.matchMedia("(min-width: 1024px)")
+
+
+let handleDesktop = () => {
+  if(mediaQuery.matches){
+    return <HomeDesktop/>
+  } else {
+    return <Home/>
+  }
+  
+}
+
+window.addEventListener("resize", (e)=> {
+    setTimeout(()=> window.location.reload(),500)
+})
 window.addEventListener("load", disableOverFlow)
+
 
 
   return (
   
     <BrowserRouter>
       <Routes>
-        <Route path='/' element= { <Home/> }></Route>
+        <Route  path='/' element= {handleDesktop()}></Route>
         <Route path='/login' element= { <Login/>}></Route>
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
@@ -38,3 +58,5 @@ window.addEventListener("load", disableOverFlow)
 }
 
 export default App;
+
+

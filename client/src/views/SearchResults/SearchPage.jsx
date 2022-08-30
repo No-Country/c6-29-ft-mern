@@ -3,6 +3,7 @@ import SearchResults from "./SearchResults";
 import React, { useEffect, useState } from "react";
 import { render } from "@testing-library/react";
 import Header from "../header/Header";
+import HeaderDesktop from "../header/HeaderDesktop";
 
 export const SearchPage = () => {
     const localValue = window.localStorage.getItem("searchValue");
@@ -53,8 +54,8 @@ export const SearchPage = () => {
     
     return(
     <div>
-        <Header/>
-        <Buscador buscar={buscar} showResults={showResults} handleBuscar={handleBuscar} />
+        {window.innerWidth < 1024? <Header/> : <HeaderDesktop/>}
+        {window.innerWidth < 1024? <Buscador buscar={buscar} showResults={showResults} handleBuscar={handleBuscar} /> : null}
         <SearchResults data={data}/>
     </div>
     )

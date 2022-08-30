@@ -1,3 +1,7 @@
+body{
+  background-color: #FEFBF7;
+}
+
 .ph {
     margin-top: 6px;
     font-size: 14px;
@@ -59,3 +63,35 @@
     font-size: 16px;
     font-weight: 700;
   }
+
+  .ws-button{
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: 2px solid black;
+    border-radius: 24px;
+    display: flex;
+    font-family: var(--secondaryFont);
+    height: 40px;
+    justify-content: space-around;
+    min-width: 150px;
+    padding: 1em;
+    width: 65%;
+    transition: all .5s;
+  }
+
+  .ws-button:hover{
+    background-color: #00bb2d;
+    box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.24);
+  }
+
+  .article-detail-container{
+    background-color: #FEFBF7 ;
+    height: 100%;
+    min-height: 92vh;
+    margin: 0;
+    padding: 1.5em;
+    width: 100%;
+  }
+
+  

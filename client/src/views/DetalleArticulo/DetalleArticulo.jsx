@@ -5,6 +5,7 @@ import '../../Styles/DetalleArticulo.css';
 import corazon from '../../img/Heart.png';
 import ScrollImg from './components/ScrollImg'
 import Ubicador from '../../img/Pin.png'
+import WsIcon from "../../img/ws-icon.svg"
 import Header from '../header/Header'
 import { useParams } from 'react-router-dom';
 
@@ -56,7 +57,7 @@ const [data,setData] = useState();
   return (
     <div>
         <Header/>
-        <div className='container m-2'>
+        <div className='article-detail-container'>
             <div className='row-cols-1 justify-content-start'>
                 <div className='col-5'>
                     <h3 className='text-bold'>{data ? data.nombreArticulo : "Cargando..."}</h3>
@@ -99,7 +100,7 @@ const [data,setData] = useState();
                             <p className='price'><b>${data ? data.precio : "Cargando..."}</b></p>
                         </div>
                         <div className='col'>
-                            <button onClick={handleWhatsAppButton}>WhatsApp</button>
+                            <button onClick={handleWhatsAppButton} className="ws-button"><img className="ws-icon" src={WsIcon} />WhatsApp</button>
                         </div>
                     </div>
                 </div>
