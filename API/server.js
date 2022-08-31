@@ -4,7 +4,7 @@ const morgan =require('morgan');
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express()
-const port = 3001
+const PORT = process.env.PORT || 3001
 const { dbConnection } = require('./database/config');
 
 
@@ -35,6 +35,6 @@ app.use('/auth',authRouter);
 
 
 
-app.listen(port, () => {
-  console.log(`Aplicacion escuchando en puerto ${port}`)
+app.listen(PORT, () => {
+  console.log(`Aplicacion escuchando en puerto ${PORT}`)
 })
