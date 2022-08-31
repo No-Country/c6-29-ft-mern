@@ -5,3 +5,20 @@
     left: 0;
     bottom: 0;
 }
+.box-input {
+    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: 
+    #D8CEBD;
+}
+.btn-Upload{
+    border: 4px;
+    background-color: #0F643B;
+    color: white;
+}
+.btn-Upload:hover {
+    color: black;
+    background-color: #D8CEBD;
+    border: 2px;
+}
