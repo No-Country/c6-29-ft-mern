@@ -1,16 +1,14 @@
-import Header from "../header/Header";
+import HeaderDesktop from "../header/HeaderDesktop"
 import Anuncio from "./component/Anuncio";
-import Buscador from "./component/Buscador";
 import Novedades from "./component/Novedades";
 
 import '../../Styles/Home.css';
 import Donaciones from "./component/Donaciones";
 
-const Home = () => {
+const HomeDesktop = () => {
     return(
-        <div className="home__container" id="home__element">
-            <Header/>
-            <Buscador/>
+        <div className="home__container" id="home__element2">
+            <HeaderDesktop/>
             <Anuncio/>
             <Novedades/> 
             <Donaciones/>
@@ -18,4 +16,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomeDesktop;

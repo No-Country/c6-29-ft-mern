@@ -5,6 +5,9 @@
     --secondaryFont: 'Kumbh Sans', sans-serif;
 }
 
+.login__brand{
+    display: none;
+}
 
 
 .login__container{
@@ -182,4 +185,79 @@
     height: 50px;
     margin:1em 25%;
     width: 50%;
+}
+
+@media (min-width: 1024px){
+
+    
+    
+    
+    .login__container__general{
+        display: flex;
+        background-color: #FEFBF7;
+       
+    }
+
+  
+    .login__brand-semicircle{
+        background-color: #FAF3E7;
+        border-radius: 500% 500% 200% 200% ;
+        border: 2px solid #D8CEBD;
+        display: flex;
+        justify-content: center;
+        height: 600px;
+        width: 650px;
+        
+    }
+
+    .semicircle__logo{
+        width: 20%;
+        height: 20%;
+        object-fit: contain;
+    }
+  
+
+    .login__brand{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+        height: 100%;
+        width: 50%;
+        
+    }
+
+    .login__brand-title{
+        font-family: var(--secondaryFont);
+        font-size: 1.8em;
+        height: 33.33%;
+        line-height: 1.5em;
+        padding-top: 1.8em;
+        text-align: center;
+        width: 55%;
+    }
+
+    
+    .login__brand-img{
+        height: 13.33%;
+        width: auto;
+        transform: scale(.9);
+    }
+
+    .login__functional{
+        width: 50%;
+        box-sizing: content-box;
+        transform: scale(.95);
+    }
+
+      
+    .login__logo-container{
+        display: none;
+    }
+
+
+    .redes__container{
+        margin: -1.5em auto;
+    }
+
 }

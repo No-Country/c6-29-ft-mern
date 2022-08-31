@@ -53,7 +53,6 @@ const handleSubmit = async (e) =>{
             <button className='btn btn-Upload' onClick={Upload}>Upload</button>
             </div>
         </div>
-
 )
 }
 export default Subirimagen

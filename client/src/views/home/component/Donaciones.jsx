@@ -47,7 +47,7 @@ function Donaciones () {
                     <div className="col-3">o o o</div>
                 </div>
                 <div className="donation__cards-container   ">
-                {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen[0]} productName={e.nombreArticulo} productLocation={e.ubicacion.longitud + "," + e.ubicacion.latitud}/>))}
+                {data.map((e)=> (<PrimaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.provincia + "," + e.ubicacion.localidad} id={e._id}/>))}
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 import GsLogo from "../../img/gs-logo.png";
 import UserLogo from "../../img/Icono-cuenta.png";
-import Bars from "../../img/bars-menu.png";
 import {Link} from 'react-router-dom';
-import "../../Styles/header.css";
+import "../../Styles/header-desktop.css";
+import BuscadorDesktop from "../home/component/BuscadorDesktop";
 
 // ICONOS MENU HAMBURGUESA
 import HomeIcon from "../../img/burger-menu-icons/home-icon.svg";
@@ -21,7 +21,7 @@ import RegisterIcon from "../../img/burger-menu-icons/registro-icon.svg"
 
 
 
-const Header = () => {
+const HeaderDesktop = () => {
     const token = localStorage.getItem("token");
     let userConnected;
     if(token === "" || token === undefined || token == null){
@@ -33,43 +33,24 @@ const Header = () => {
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
-    const showNavMenu = () => {
-        const navMenu = document.querySelector("[data-nav-menu]");
-        const bars = document.querySelector("[data-bars]");
-
-        if(navMenu.classList.contains("visible")){
-            bars.style.transform = "scale(0)"
-            navMenu.style.opacity = 0
-            setTimeout(() => {
-                navMenu.classList.remove("visible");
-                bars.src = Bars
-                bars.style.transform = "scale(1)"
-            },200)
-        } else {
-            navMenu.classList.add("visible")
-            bars.style.transform = "scale(0)"
-            setTimeout(() => {
-                navMenu.style.opacity = 1
-                bars.src = CloseMenuIcon
-                bars.style.transform = "scale(1)"
-            },200)
-        }
-        
-        }
-
+   
         const closeSession = () => {
             localStorage.removeItem("token");
             window.location.reload();
         }
     
     return(
-        <div className="header-container" data-header-container>
-            <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
-            <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>       
-            <img src={UserLogo}  alt="imagen" data-profile/>
+        <div className="header-desktop-container" data-header-container>
+            <Link to='/' className="link-logo-desktop"><img src={GsLogo} alt="imagen" className="logo-principal-desktop"/></Link>   
+            <BuscadorDesktop/>    
+            <div className="desktop-login-icon-container">
+                 <img src={UserLogo}  alt="imagen" data-profile/>
+                 <p>Mi cuenta</p>
+            </div>
+       
             
-            <div className="nav-menu__container" data-nav-menu>
-                <ul className="container__list">
+            {/* <div className="nav-menu-desktop__container" data-nav-menu>
+                <ul className="desktop-container__list">
                    {!userConnected &&
                    <>
                     <li className="list__items"><img className="items__icon" src={LoginIcon}/><Link to='/login'>Iniciar Sesión</Link></li>
@@ -100,7 +81,7 @@ const Header = () => {
                    
                     
                 </ul>
-            </div>
+            </div> */}
             
 
             <div className="nav-menu__container" data-profile-menu> 
@@ -116,4 +97,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderDesktop
