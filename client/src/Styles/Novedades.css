@@ -21,3 +21,14 @@
     margin-bottom: 1em;
     width: 100%;
 }
+
+@media (min-width: 1024px) {
+    .desktop-cards-containers{
+        flex-wrap: nowrap;
+        justify-content: start;
+        max-width: max-content;
+        position: relative;
+        right: -16px;
+        width: 100vw;
+    }
+}   
