@@ -7,11 +7,8 @@ import VerMas from './views/home/component/VerMas.jsx';
 import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
 import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
-import ReactDOM from "react-dom/client" 
-import { unmountComponentAtNode } from 'react-dom';
-import {createRoot} from "react-dom/client"
 import { Navigate } from 'react-router-dom';
-import Header from './views/header/Header.jsx';
+
 
 function App() {
 
