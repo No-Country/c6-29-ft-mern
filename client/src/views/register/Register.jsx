@@ -5,7 +5,7 @@ import GsLogo from "../../img/gs-logo.png"
 import checkDone from "../../img/check.png"
 import returnButton from "../../img/return.svg"
 import { useState } from "react";
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import ilustracion from "../../img/ilustracion.png"
 
 const Register = () => {
@@ -49,6 +49,8 @@ const [doublePass,setDoublePass] = useState ("");
     }    
 }
   
+const navigate = useNavigate()
+
 const handleReturn = () => {
     window.location.pathname = "/";
 }
@@ -78,8 +80,8 @@ return(
         
         <div className="login__functional">
     <div className="login__container" data-register-container>
+        <img src={returnButton} onClick={() => navigate("-1")} className="return-button" alt="" />
         <div className="login__logo-container">
-            <img src={returnButton} onClick={handleReturn} className="return-button" alt="" />
             <img className="logo__item" src={GsLogo}/>
         </div>
         <h2 className="container__title">Creá tu <span>cuenta</span></h2>

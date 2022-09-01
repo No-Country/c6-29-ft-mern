@@ -10,6 +10,8 @@ import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
 import ReactDOM from "react-dom/client" 
 import { unmountComponentAtNode } from 'react-dom';
 import {createRoot} from "react-dom/client"
+import { Navigate } from 'react-router-dom';
+import Header from './views/header/Header.jsx';
 
 function App() {
 
@@ -46,6 +48,7 @@ window.addEventListener("load", disableOverFlow)
     <BrowserRouter>
       <Routes>
         <Route  path='/' element= {handleDesktop()}></Route>
+        <Route path="*" element={<Navigate replace to="/login" />} />
         <Route path='/login' element= { <Login/>}></Route>
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
