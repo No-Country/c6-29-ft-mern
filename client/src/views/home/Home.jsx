@@ -11,9 +11,9 @@ const Home = () => {
         <div className="home__container" id="home__element">
             <Header/>
             <Buscador/>
-            <Anuncio/>
+            <Anuncio/> 
             <Novedades/> 
-            <Donaciones/>
+            <Donaciones/> 
         </div>
     )
 }

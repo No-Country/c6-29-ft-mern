@@ -14,7 +14,7 @@ const HomeDesktop = () => {
     return(
         <div className="home__container" id="home__element2">
             <HeaderDesktop/>
-            <Anuncio/>
+            {/* <Anuncio/> */}
             <Novedades /> 
             <Donaciones />
         </div>

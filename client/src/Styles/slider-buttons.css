@@ -1,3 +1,7 @@
+.desktop-cards-buttons{
+    display: none;
+}
+
 .desktop-button-left, .desktop-button-right{
     background-color: #FEFBF7;
     border: 2px solid #912E1C;
@@ -24,4 +28,10 @@
 
 .container-desktop__relative{
     position: relative;
+}
+
+@media (min-width: 1024px){
+    .desktop-cards-buttons{
+        display: block;
+    }
 }
