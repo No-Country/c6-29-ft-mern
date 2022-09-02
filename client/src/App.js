@@ -12,6 +12,8 @@ import { unmountComponentAtNode } from 'react-dom';
 import {createRoot} from "react-dom/client"
 import { Navigate } from 'react-router-dom';
 import Header from './views/header/Header.jsx';
+import CategoryResult from './views/CategoryResult/CategoryResult.jsx';
+import SectionResult from './views/SectionResult/SectionResult.jsx';
 
 function App() {
 
@@ -55,6 +57,8 @@ window.addEventListener("load", disableOverFlow)
         <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
         <Route path='/detallearticulo/:id' element= {<DetalleArticulo/>}></Route>
+        <Route path='/catResult' element= {<CategoryResult/>}></Route>
+        <Route path='/sectionResults' element= {<SectionResult/>}></Route>
       </Routes>
     </BrowserRouter>
   );

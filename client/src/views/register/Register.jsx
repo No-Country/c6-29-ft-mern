@@ -51,9 +51,6 @@ const [doublePass,setDoublePass] = useState ("");
   
 const navigate = useNavigate()
 
-const handleReturn = () => {
-    window.location.pathname = "/";
-}
 
 // FUNCION PARA REDIRECCIONAR AL LOGIN Y MOSTRAR MENSAJE DE ARRIBO CORREO
     
