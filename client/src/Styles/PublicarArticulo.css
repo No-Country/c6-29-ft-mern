@@ -48,3 +48,11 @@
 .box-description{
     height: 310px;
 }
+
+.ubication-input{
+    padding-left: 3em;
+}
+
+.dimension-input {
+    text-align: center;
+}

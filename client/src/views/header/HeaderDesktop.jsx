@@ -122,38 +122,7 @@ const HeaderDesktop = () => {
                     <li className="list__items-desktop">Mis Publicaciones</li>
                     </ul>
                  </div>
-            
-            {/* <div className="nav-menu-desktop__container" data-nav-menu>
-                <ul className="desktop-container__list">
-                   
-                  
-                    <li className="list__items"><img className="items__icon" src={LoginIcon}/><Link to='/login'>Iniciar Sesión</Link></li>
-                    <li className="list__items"><img className="items__icon" src={RegisterIcon}/><Link to= '/register'>Registrarse</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
-                    
-                  
-                   
-                  
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
-                    <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
-                    <li className="list__items"><img className="items__icon" src={CloseSessionIcon} onClick={closeSession}/>Cerrar sesión</li>
-                
-                   
-                    
-                </ul>
-            </div> */}
+         
              
         </div>  
               

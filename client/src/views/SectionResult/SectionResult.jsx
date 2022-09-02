@@ -40,7 +40,6 @@ export const SectionResult = () => {
       <>
       <HeaderDesktop/>
         <div className="category-result__container">
-            
             {data.map((e) => (<PrimaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.provincia + "," + e.ubicacion.localidad} productPrice={e.precio}id={e._id}/>))}
         </div>
         </>
