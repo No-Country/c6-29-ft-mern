@@ -92,21 +92,21 @@ const HeaderDesktop = () => {
                     <ul className="desktop-container__list" >
                     <li className="list__items-desktop" onClick={showCategoriesMenuDesktop} data-categorias>Categorias ▿
                         <ul className="list__category-desktop" data-lista-categorias>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f542a1c8927a065228ecf0">Accesorios para Vehiculos</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f550f188ac3a2ce17c6c9c">Animales y Mascotas</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f550fa88ac3a2ce17c6c9d">Cámaras y accesorios</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5510388ac3a2ce17c6c9e">Celulares y accesorios</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5510b88ac3a2ce17c6c9f">Computación</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5511588ac3a2ce17c6ca0">Consolas y videojuegos</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5512188ac3a2ce17c6ca1">Deportes y fitness</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5512a88ac3a2ce17c6ca2">Electrodomésticos</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5513488ac3a2ce17c6ca3">Electrónica, audio y video</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5513888ac3a2ce17c6ca4">Hogar, muebles y jardín</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5513f88ac3a2ce17c6ca5">Instrumentos musicales</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5514688ac3a2ce17c6ca6">Juegos y juguetes</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5514b88ac3a2ce17c6ca7">Libros, revistas y comics</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5515288ac3a2ce17c6ca8">Ropa y accesorios</li></Link>
-                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="62f5515c88ac3a2ce17c6ca9">Otros</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124093caf04c4f8535cdde">Accesorios para Vehiculos</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="631240afcaf04c4f8535cde0">Animales y Mascotas</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="631240dccaf04c4f8535cde2">Cámaras y accesorios</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124104caf04c4f8535cde4">Celulares y accesorios</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124158caf04c4f8535cde6">Computación</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="663124171caf04c4f8535cde8">Consolas y videojuegos</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124186caf04c4f8535cdea">Deportes y fitness</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="6312419dcaf04c4f8535cdec">Electrodomésticos</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="631241b9caf04c4f8535cdee">Electrónica, audio y video</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="631241d4caf04c4f8535cdf0">Hogar, muebles y jardín</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="631241fccaf04c4f8535cdf2">Instrumentos musicales</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124212caf04c4f8535cdf4">Juegos y juguetes</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124230caf04c4f8535cdf6">Libros, revistas y comics</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124246caf04c4f8535cdf8">Ropa y accesorios</li></Link>
+                            <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124254caf04c4f8535cdfa">Otros</li></Link>
                         </ul>
                     </li>
                     
