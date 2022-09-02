@@ -51,7 +51,7 @@ const [data,setData] = useState();
         if(token){
             window.location = `https://wa.me/${data ? data.usuario.telefono : null}/?text=Hola,%20me%20gustaria%20contactar%20contigo%20por%20este%20articulo:%20${data ? data.nombreArticulo: null}%20${window.location}`
         } else {
-            alert("Debes iniciar sesión para contactarte con un vendedor.")
+            window.location.pathname = "/login"
         }
     }
 
