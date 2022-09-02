@@ -18,7 +18,7 @@ const handleSubmit = async (e) =>{
         imgInput.name = result
         getImgUrl();
         // render(<span className='img-input-check'>COMPLETADO</span>) 
-        alert("completado")
+        alert("completado");
     } catch(error){
         console.log(error);
     }

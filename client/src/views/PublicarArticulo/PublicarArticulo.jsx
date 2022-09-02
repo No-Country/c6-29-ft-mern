@@ -68,6 +68,7 @@ const [unidades,setUnidades] = useState ("");
                 body:JSON.stringify(object),
             });
             const res = await response.json();
+            window.location.pathname = "/"
             return res;
           } catch (error) {
         
@@ -88,7 +89,8 @@ const [unidades,setUnidades] = useState ("");
           const getImgUrl = () => {
             const imgInput = document.querySelector("[data-img-input]")
             setUrl(imgInput.name)
-            console.log(imgInput.name)
+            localStorage.setItem("LoadedImg", imgInput.name)
+            return imgInput.name
             }
 
 
@@ -131,11 +133,11 @@ const [unidades,setUnidades] = useState ("");
                                     <h3 className='title-articule'>Ubicación</h3>
                             </div>
                             <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11 mb-2'>
-                            <img src={Ubicador} alt="search" className="search-icon"/>
+                           
                             <input type="text" value={provincia} onChange={(e)=> setProvincia(e.target.value)}className="form-control rounded-pill ubication-input" placeholder="Provincia" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             </div>
                             <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11'>
-                            <img src={Ubicador} alt="search" className="search-icon"/>
+                            
                                 <input type="text" className="form-control rounded-pill ubication-input" value={localidad} onChange={(e)=> setLocalidad(e.target.value)}placeholder="Localidad" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             </div>
                         </div>
@@ -200,10 +202,10 @@ const [unidades,setUnidades] = useState ("");
                     <div className='col-xs-12 col-sm-10 col-md-9 col-lg-9'>
                         <div className='row row-cols-1 box-Articule-description'>
                             <div className='col-8 m-2'>
-                                <h3>Descripcion</h3>
+                                <h3>Descripción</h3>
                             </div>
                             <div className='col-12'>
-                                <input type="text" className="form-control description box-description" value={descripcion} onChange={(e)=> setDescripcion(e.target.value)}placeholder="Ingresar descripción del producto." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                                <textarea type="text" className="form-control description box-description" value={descripcion} onChange={(e)=> setDescripcion(e.target.value)}  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
                             </div>
                         </div>
                     </div>
@@ -231,7 +233,7 @@ const [unidades,setUnidades] = useState ("");
                             <h3>Precio</h3>
                         </div>
                         <div className='col-12'>
-                            <input type="number" value={precio} onChange={(e)=> setPrecio(e.target.value)} className="form-control rounded-pill" placeholder="0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                            <input type="number" value={precio} onChange={(e)=> setPrecio(e.target.value)} className="form-control rounded-pill"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
                         </div>
                     </div>
                     </div>

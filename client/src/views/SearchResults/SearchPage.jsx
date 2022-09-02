@@ -43,14 +43,7 @@ export const SearchPage = () => {
       render(<SearchResults data={data}/>)
     }
 
-    const getLocalValue = () => {
-       const localValue = window.localStorage.getItem("searchValue");
-        const input = document.querySelector("[data-search-bar]")
-        console.log(input)
-        setTimeout(()=>{
-            input.value = localValue;
-        },400)
-    }
+  
     
     return(
     <div>

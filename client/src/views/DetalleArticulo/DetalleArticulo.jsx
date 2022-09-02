@@ -8,6 +8,7 @@ import Ubicador from '../../img/Pin.png'
 import WsIcon from "../../img/ws-icon.svg"
 import Header from '../header/Header'
 import { useParams } from 'react-router-dom';
+import HeaderDesktop from "../header/HeaderDesktop";
 
 
 function DetalleArticulo() {
@@ -56,16 +57,14 @@ const [data,setData] = useState();
 
   return (
     <div>
-        <Header/>
+        {window.innerWidth < 1024? <Header/> : <HeaderDesktop/>}
         <div className='article-detail-container'>
             <div className='row-cols-1 justify-content-start'>
                 <div className='col-5'>
                     <h3 className='text-bold'>{data ? data.nombreArticulo : "Cargando..."}</h3>
                 </div>
                 <div className='row'>
-                    <div className='col-1'>
-                        <img src={Ubicador} alt="search" className="search-icon"/>
-                    </div>
+                    
                     <div className='col-8'>
                         <p className='ph'>{data ? data.ubicacion.provincia + ", " + data.ubicacion.localidad : "Cargando..."}</p>
                     </div>
@@ -74,9 +73,7 @@ const [data,setData] = useState();
                     <ScrollImg imgURL={data ? data.imagen : "Cargando..."}/>
                 </div>
                 <div className='row justify-content-end'>
-                <div className='col-2 mt-3'>
-                    <img src={corazon} alt='favorito'/>
-                </div>
+              
                 </div>
                 <div className='row'>
                     <div className='col-9'>

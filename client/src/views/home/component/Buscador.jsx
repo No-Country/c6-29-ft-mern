@@ -19,9 +19,7 @@ function Buscador ({buscar,showResults,handleBuscar}) {
               <Link to="/searchPage" onClick={setLocalValue} ><img src={searchIcon} alt="search" className="search-icon-buscador" /></Link>
             <input type="text" defaultValue={buscar} onChange={handleBuscar}  data-search-bar></input>
           </div>
-          <div className="filter-button__container">
-              <img src={filterIcon} className="filter-button__button" alt="Filtrar" />
-          </div>
+       
         </div>
     </div>
   

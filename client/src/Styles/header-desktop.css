@@ -90,3 +90,8 @@
     text-align: start;
     width: 250px;
 }
+
+.desktop-container__list a {
+    color: black;
+    text-decoration: none;
+}

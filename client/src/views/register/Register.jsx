@@ -77,8 +77,9 @@ return(
         
         <div className="login__functional">
     <div className="login__container" data-register-container>
-        <img src={returnButton} onClick={() => navigate("-1")} className="return-button" alt="" />
+        
         <div className="login__logo-container">
+        <img src={returnButton} onClick={() => navigate("-1")} className="return-button" alt="" />
             <img className="logo__item" src={GsLogo}/>
         </div>
         <h2 className="container__title">Creá tu <span>cuenta</span></h2>

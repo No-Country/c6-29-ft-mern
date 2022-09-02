@@ -50,9 +50,13 @@
 }
 
 .ubication-input{
-    padding-left: 3em;
+    padding-left: .5em;
 }
 
 .dimension-input {
     text-align: center;
+}
+
+.description{
+    text-align: start;
 }

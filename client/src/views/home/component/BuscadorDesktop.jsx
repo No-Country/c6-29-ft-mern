@@ -7,7 +7,10 @@ function BuscadorDesktop ({buscar,handleBuscar}) {
 
  const setLocalValue = () =>{
     const input = document.querySelector("[data-search-bar]").value
-    window.localStorage.setItem("searchValue",input)
+    window.localStorage.setItem("searchValue",input);
+    if(window.location.pathname === "/searchPage"){
+      window.location.reload()
+    } 
   }
   
 

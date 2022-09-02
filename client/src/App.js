@@ -41,8 +41,8 @@ window.addEventListener("resize", (e)=> {
 })
 window.addEventListener("load", disableOverFlow)
 
-
-
+const token = localStorage.getItem("token");
+console.log(token)
   return (
   
     <BrowserRouter>
@@ -52,7 +52,7 @@ window.addEventListener("load", disableOverFlow)
         <Route path='/login' element= { <Login/>}></Route>
         <Route path='/register' element= { <Register/> }></Route>
         <Route path='/vermas' element= { <VerMas/> }></Route>
-        <Route path='/publicar' element= {<PublicarArticulo/>}></Route>
+        <Route path='/publicar' element= {token? <PublicarArticulo/> : <Login/>}></Route>
         <Route path='/searchPage' element= {<SearchPage/>}></Route>
         <Route path='/detallearticulo/:id' element= {<DetalleArticulo/>}></Route>
         <Route path='/catResult' element= {<CategoryResult/>}></Route>

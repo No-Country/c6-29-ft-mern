@@ -71,9 +71,7 @@ function Novedades ( ) {
                 <div className="col-9 mb-4">
                     <h2>Novedades</h2>
                 </div>
-                <div className="col-3">
-                    <Link className="text-ver text-center" to='/vermas'>Ver más</Link>
-                </div> 
+
             </div>
             <div className="card-container-novedades desktop-cards-containers">
               

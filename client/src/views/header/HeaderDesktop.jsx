@@ -4,23 +4,6 @@ import {Link} from 'react-router-dom';
 import "../../Styles/header-desktop.css";
 import BuscadorDesktop from "../home/component/BuscadorDesktop";
 
-// ICONOS MENU HAMBURGUESA
-import HomeIcon from "../../img/burger-menu-icons/home-icon.svg";
-import HistoryIcon from "../../img/burger-menu-icons/history-icon.svg";
-import FavIcon from "../../img/burger-menu-icons/favorite-icon.svg";
-import NewsIcon from "../../img/burger-menu-icons/news-icon.svg";
-import OffersIcon from "../../img/burger-menu-icons/offers-icon.svg";
-import DonacionesIcon from "../../img/burger-menu-icons/donaciones-icon.svg";
-import NewPubIcon from "../../img/burger-menu-icons/crear-publicacion-icon.svg";
-import MyPubsIcon from "../../img/burger-menu-icons/mis-publicaciones-icon.svg";
-import HelpIcon from "../../img/burger-menu-icons/ayuda-icon.svg";
-import CloseSessionIcon from "../../img/burger-menu-icons/close-session-icon.svg";
-import CloseMenuIcon from "../../img/burger-menu-icons/close-menu-icon.svg"
-import LoginIcon from "../../img/burger-menu-icons/login-icon.svg"
-import RegisterIcon from "../../img/burger-menu-icons/registro-icon.svg"
-
-
-
 const HeaderDesktop = () => {
     const token = localStorage.getItem("token");
     let userConnected;
@@ -83,8 +66,7 @@ const HeaderDesktop = () => {
                 <BuscadorDesktop/>    
                 
                 <div className="desktop-login-icon-container">
-                    <img src={UserLogo}  alt="imagen" data-profile/>
-                    <p>Mi cuenta</p>        
+                    <Link to="/login"><img src={UserLogo}  alt="imagen" data-profile/></Link>
                 </div>
             </div>
 
@@ -109,17 +91,13 @@ const HeaderDesktop = () => {
                             <Link to='/catResult' onClick={setCategoryName}><li className="list__category-items-desktop" id="63124254caf04c4f8535cdfa">Otros</li></Link>
                         </ul>
                     </li>
-                    
 
-                    <li className="list__items-desktop">Favoritos</li>
                     <Link to='/sectionResults' onClick={setSectionName}><li className="list__items-desktop" id="recientes">Novedades</li></Link>
-                    <li className="list__items-desktop">Ofertas</li>
                     <Link to='/sectionResults' onClick={setSectionName}><li className="list__items-desktop" id="donaciones">Donaciones</li></Link>
                     </ul>
 
                     <ul className="desktop-container__list">
-                    <li className="list__items-desktop">Crear Publicación</li>
-                    <li className="list__items-desktop">Mis Publicaciones</li>
+                    <Link to='/publicar'><li className="list__items-desktop">Crear Publicación</li></Link>
                     </ul>
                  </div>
          
