@@ -35,7 +35,7 @@ function Novedades ( ) {
           fetchData()
        }, [])
        
-
+       console.log(data)
        
       const carouselContainer = document.querySelector(".desktop-cards-containers")
       var contador = 0

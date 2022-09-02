@@ -8,26 +8,7 @@ const Subirimagen = ({getImgUrl}) => {
 
 const [file,setFile] = useState(null)
 
-const Upload = ( ) => {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 2000,
-        background: '#f6f6f6',
-        timerProgressBar: true,
-        
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-      
-      Toast.fire({
-        icon: 'success',
-        title: `Se Agrego con exito tu imagen`
-      })
-}
+
    
 const handleSubmit = async (e) =>{
     e.preventDefault()
@@ -36,7 +17,8 @@ const handleSubmit = async (e) =>{
         const imgInput = document.querySelector("[data-img-input]")
         imgInput.name = result
         getImgUrl();
-        render(<span className='img-input-check'>COMPLETADO</span>) 
+        // render(<span className='img-input-check'>COMPLETADO</span>) 
+        alert("completado")
     } catch(error){
         console.log(error);
     }
@@ -50,7 +32,7 @@ const handleSubmit = async (e) =>{
                 </form>
             </div>
             <div className='col-4 align-self-center m-0 p-0'>
-            <button className='btn btn-Upload' onClick={Upload}>Upload</button>
+            <button className='btn btn-Upload' onClick={handleSubmit}>Upload</button>
             </div>
         </div>
 )
