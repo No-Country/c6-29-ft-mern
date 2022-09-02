@@ -8,7 +8,6 @@ import PublicarArticulo from './views/PublicarArticulo/PublicarArticulo.jsx';
 import SearchPage from './views/SearchResults/SearchPage.jsx';
 import DetalleArticulo from './views/DetalleArticulo/DetalleArticulo.jsx';
 import { Navigate } from 'react-router-dom';
-
 import Header from './views/header/Header.jsx';
 import CategoryResult from './views/CategoryResult/CategoryResult.jsx';
 import SectionResult from './views/SectionResult/SectionResult.jsx';

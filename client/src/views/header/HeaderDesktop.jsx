@@ -61,6 +61,9 @@ const HeaderDesktop = () => {
 
         const setSectionName = (e) =>{
             localStorage.setItem("section",e.target.id);
+            if(window.location.pathname === "/sectionResults"){
+                window.reload()
+            }
         }
 
 
