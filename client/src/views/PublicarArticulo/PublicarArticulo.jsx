@@ -25,9 +25,22 @@ const [unidades,setUnidades] = useState ("");
 
     const createArticulo = async (e) => {
        e.preventDefault();
+      
+      
+       const token = localStorage.getItem("token")
+       const parseJwt = () => {
+        try {
+          return JSON.parse(atob(token.split('.')[1]));
+        } catch (e) {
+          return null;
+        }
+      };
+
+       const decoded = parseJwt().userId;
+
            try {
             const object = {
-                usuario: usuario,//aca iria id de usuario que traigo con el token._id,
+                usuario: decoded,//aca iria id de usuario que traigo con el token._id,
                 nombreArticulo: nombre,
                 fechaCreacion: fecha,//aca tendria que tomar la fecha de la compu con date()
                 imagen:url,
@@ -78,11 +91,10 @@ const [unidades,setUnidades] = useState ("");
             console.log(imgInput.name)
             }
 
-        const getUserID = () => {
-            const token = localStorage.getItem("token")
-            return token
-        }
-    
+
+     
+          
+        
         
             
   return (
@@ -120,11 +132,11 @@ const [unidades,setUnidades] = useState ("");
                             </div>
                             <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11 mb-2'>
                             <img src={Ubicador} alt="search" className="search-icon"/>
-                            <input type="text" value={provincia} onChange={(e)=> setProvincia(e.target.value)}className="form-control rounded-pill" placeholder="Provincia" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                            <input type="text" value={provincia} onChange={(e)=> setProvincia(e.target.value)}className="form-control rounded-pill ubication-input" placeholder="Provincia" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             </div>
                             <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11'>
                             <img src={Ubicador} alt="search" className="search-icon"/>
-                                <input type="text" className="form-control rounded-pill" value={localidad} onChange={(e)=> setLocalidad(e.target.value)}placeholder="Localidad" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                                <input type="text" className="form-control rounded-pill ubication-input" value={localidad} onChange={(e)=> setLocalidad(e.target.value)}placeholder="Localidad" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             </div>
                         </div>
                     </div>
@@ -139,7 +151,7 @@ const [unidades,setUnidades] = useState ("");
                             </div>
                             <div className='col-4'>
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control rounded-pill" value={ancho} onChange={(e)=> setAncho(e.target.value)}placeholder="Ancho" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                                    <input type="text" className="form-control rounded-pill dimension-input" value={ancho} onChange={(e)=> setAncho(e.target.value)}placeholder="Ancho" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                                 </div>
                             </div>
                             <div className='col-1  align-self-center mb-2'>
@@ -147,7 +159,7 @@ const [unidades,setUnidades] = useState ("");
                             </div>
                             <div className='col-4'>
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control rounded-pill" value={alto} onChange={(e)=> setAlto(e.target.value)}placeholder="Alto" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                                    <input type="text" className="form-control rounded-pill dimension-input" value={alto} onChange={(e)=> setAlto(e.target.value)}placeholder="Alto" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                                 </div>
                             </div>
                         </div>

@@ -28,7 +28,9 @@ const handleSubmit = async (e) =>{
         <div className='row justify-content-start'>
             <div className='col-4 mr-2'>
                 <form className='box-form' onSubmit ={handleSubmit}>
+                    <div className="box-input__container">
                     <input className='box-input' type="file" name= " "  id = " " onChange={(e)=> setFile(e.target.files[0])} data-img-input/>
+                    </div>
                 </form>
             </div>
             <div className='col-4 align-self-center m-0 p-0'>
