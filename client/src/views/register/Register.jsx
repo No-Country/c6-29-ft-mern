@@ -32,7 +32,7 @@ const [doublePass,setDoublePass] = useState ("");
                 telefono: tel
             };    
                console.log(object)
-            const response = await fetch("http://localhost:3001/auth/registro", {
+            const response = await fetch("https://afternoon-meadow-03259.herokuapp.com/auth/registro", {
               method: "POST",
               headers: {
                 "Content-type": "application/json",

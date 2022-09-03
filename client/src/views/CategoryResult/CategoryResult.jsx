@@ -11,7 +11,7 @@ export const CategoryResult = () => {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/articulos/",{
+                "https://afternoon-meadow-03259.herokuapp.com/articulos/",{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',

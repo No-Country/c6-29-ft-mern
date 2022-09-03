@@ -15,7 +15,7 @@ export const SearchPage = () => {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/articulos/buscarnombre/?buscar="+buscar,{
+                "https://afternoon-meadow-03259.herokuapp.com/articulos/buscarnombre/?buscar="+buscar,{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',

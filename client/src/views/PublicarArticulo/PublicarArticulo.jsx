@@ -59,7 +59,7 @@ const [unidades,setUnidades] = useState ("");
                 unidades:unidades,
             };    
                console.log(object)
-            const response = await fetch("http://localhost:3001/articulos/", {
+            const response = await fetch("https://afternoon-meadow-03259.herokuapp.com/articulos/", {
               method: "POST",
               headers: {
                 "Content-type": "application/json",

@@ -29,7 +29,13 @@ const Header = () => {
     } else {
         userConnected = true;
     }
-
+    const setSectionName = (e) =>{
+        localStorage.setItem("section",e.target.id);
+        console.log(e.target);
+        if(window.location.pathname === "/sectionResults"){
+            window.reload()
+        }
+    }
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -75,24 +81,24 @@ const Header = () => {
                     <li className="list__items"><img className="items__icon" src={LoginIcon}/><Link to='/login'>Iniciar Sesión</Link></li>
                     <li className="list__items"><img className="items__icon" src={RegisterIcon}/><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    
+                    <li className="list__items" id="recientes"><Link to='/sectionResults'onClick={setSectionName}><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    
+                    <li className="list__items" id="donaciones" onClick={setSectionName}><Link to='/sectionResults'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                    </>
                    }
                    {userConnected &&
                    <>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    
+                    <li className="list__items"id="recientes"><Link to='/sectionResults'onClick={setSectionName}><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    
+                    <li className="list__items"id="donaciones"onClick={setSectionName}><Link to='/sectionResults'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
+                    
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
+                    
                     <li className="list__items"><img className="items__icon" src={CloseSessionIcon} onClick={closeSession}/>Cerrar sesión</li>
                    </>
                     }   

@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import PrimaryCards from "../home/component/PrimaryCards";
 import "../../Styles/category-results.css"
 import HeaderDesktop from "../header/HeaderDesktop";
-
+import Header from "../header/Header";
 export const SectionResult = () => {
 
     const [data,setData] = useState([]);
@@ -16,7 +16,7 @@ export const SectionResult = () => {
               const section = localStorage.getItem("section")
                   
               const response = await fetch(
-                `http://localhost:3001/articulos/${section}`,{
+                `https://afternoon-meadow-03259.herokuapp.com/articulos/${section}`,{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',
@@ -25,7 +25,7 @@ export const SectionResult = () => {
               );
       
               const res= await response.json()
-              setData(res)
+              setData(res.docs)
              
             } catch (err) {
               console.log(err);
@@ -38,7 +38,7 @@ export const SectionResult = () => {
        
     return (
       <>
-      <HeaderDesktop/>
+      {window.innerWidth < 1024? <Header/> : <HeaderDesktop/>}
         <div className="category-result__container">
             {data.map((e) => (<PrimaryCards key={e._id} imgURL={e.imagen} productName={e.nombreArticulo} productLocation={e.ubicacion.provincia + "," + e.ubicacion.localidad} productPrice={e.precio}id={e._id}/>))}
         </div>

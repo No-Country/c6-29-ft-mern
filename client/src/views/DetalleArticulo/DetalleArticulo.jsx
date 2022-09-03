@@ -21,7 +21,7 @@ const [data,setData] = useState();
         const fetchData = async () => {
             try {
               const response = await fetch(
-                `http://localhost:3001/articulos/${id.id}`,{
+                `https://afternoon-meadow-03259.herokuapp.com/articulos/${id.id}`,{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json'

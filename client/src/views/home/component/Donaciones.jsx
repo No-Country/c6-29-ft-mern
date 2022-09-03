@@ -14,7 +14,7 @@ function Donaciones () {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/articulos/donaciones",{
+                "https://afternoon-meadow-03259.herokuapp.com/articulos/donaciones",{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',
