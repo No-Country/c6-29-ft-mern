@@ -58,6 +58,6 @@ A su vez, los usuarios pueden buscar dichos productos mediante un buscador o bú
 
 ## Deploy
 
-Link de acceso:
-https://afternoon-meadow-03259.herokuapp.com/verapi BACKEND
+Link de acceso:<br><br>
+https://afternoon-meadow-03259.herokuapp.com/verapi BACKEND<br><br>
 https://garagestoreproyect.vercel.app/ FRONTEND
