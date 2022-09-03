@@ -25,7 +25,9 @@ export const SectionResult = () => {
               );
       
               const res= await response.json()
-              setData(res.docs)
+              
+                setData(res)
+              
              
             } catch (err) {
               console.log(err);

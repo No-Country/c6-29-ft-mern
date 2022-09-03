@@ -31,9 +31,8 @@ const Header = () => {
     }
     const setSectionName = (e) =>{
         localStorage.setItem("section",e.target.id);
-        console.log(e.target);
         if(window.location.pathname === "/sectionResults"){
-            window.reload()
+            window.location.reload()
         }
     }
 
@@ -82,9 +81,9 @@ const Header = () => {
                     <li className="list__items"><img className="items__icon" src={RegisterIcon}/><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
                     
-                    <li className="list__items" id="recientes"><Link to='/sectionResults'onClick={setSectionName}><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    <li className="list__items" ><Link to='/sectionResults'onClick={setSectionName} id="recientes"><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
                     
-                    <li className="list__items" id="donaciones" onClick={setSectionName}><Link to='/sectionResults'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    <li className="list__items"  onClick={setSectionName}><Link to='/sectionResults' id="donaciones"><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                    </>
                    }
@@ -92,9 +91,9 @@ const Header = () => {
                    <>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
                     
-                    <li className="list__items"id="recientes"><Link to='/sectionResults'onClick={setSectionName}><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    <li className="list__items"><Link to='/sectionResults'onClick={setSectionName} id="recientes"><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
                     
-                    <li className="list__items"id="donaciones"onClick={setSectionName}><Link to='/sectionResults'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    <li className="list__items" onClick={setSectionName}><Link to='/sectionResults' id="donaciones"><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                     
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
