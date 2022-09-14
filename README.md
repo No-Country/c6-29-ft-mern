@@ -54,7 +54,7 @@ A su vez, los usuarios pueden buscar dichos productos mediante un buscador o bú
 
  - Melanie Campos &nbsp; <a href="https://www.linkedin.com/in/melanie-campos-9983b0238/" rel="nofollow"> <img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" width="20" height="20" data-canonical-src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" style="max-width: 100%;"> </a> | *Diseñadora UX/UI*
 
- - Nora Saucedo &nbsp; <a href="https://www.linkedin.com/in/nora-patricia-saucedo-6b3746225/"> <img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" width="20" height="20" data-canonical-src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" style="max-width: 100%;"> </a> | *Desarrolladora Back-end*
+ - Nora Saucedo &nbsp; <a href="https://www.linkedin.com/in/nora-patricia-saucedo-6b3746225/"> <img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" width="20" height="20" data-canonical-src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" style="max-width: 100%;"> </a> | *Desarrolladora Full-Stack*
 
 ## Deploy
 
