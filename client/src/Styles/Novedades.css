@@ -1,0 +1,23 @@
+
+.container-fluid{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.text-ver {
+    font-family: Kumbh Sans;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.88px;
+    color: #912E1C;
+    text-decoration: none;
+}
+
+.card-container-novedades{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+    width: 100%;
+}
