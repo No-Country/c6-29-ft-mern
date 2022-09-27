@@ -6,7 +6,7 @@ import returnButton from "../../img/return.svg"
 import "../../Styles/login-register.css"
 import { useState}  from "react"
 import ilustracion from "../../img/ilustracion.png"
-
+import { Link } from "react-router-dom"
 
 const Login = () => {
     
@@ -20,7 +20,7 @@ const Login = () => {
                 email: email,
                 password: pass,
             };    
-            const response = await fetch("http://localhost:3001/auth/login", {
+            const response = await fetch("https://afternoon-meadow-03259.herokuapp.com/auth/login", {
               method: "POST",
               headers: {
                 "Content-type": "application/json",
@@ -80,7 +80,7 @@ const handleReturn = () => {
                             <img src={GoogleLogo} alt="Google"/>
                         </div>
                     </div>
-                    <p className="login__crear-cuenta">¿No tienes cuenta? <a href="#" className="crear-cuenta__link">Creala gratis acá</a></p>
+                    <p className="login__crear-cuenta">¿No tienes cuenta? <Link to="/register">Creala gratis acá</Link></p>
                 </div>
             </div>
         </div>

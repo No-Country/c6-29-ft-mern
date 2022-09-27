@@ -30,6 +30,7 @@
 }
 
 .login__logo-container .return-button{
+    cursor: pointer;
     position: absolute;
     top: 2em;
     left: 2em;

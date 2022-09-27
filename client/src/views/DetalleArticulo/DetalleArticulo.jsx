@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react';
 import '../../Styles/DetalleArticulo.css';
 import corazon from '../../img/Heart.png';
 import ScrollImg from './components/ScrollImg'
 import Ubicador from '../../img/Pin.png'
+import WsIcon from "../../img/ws-icon.svg"
 import Header from '../header/Header'
 import { useParams } from 'react-router-dom';
+import HeaderDesktop from "../header/HeaderDesktop";
 
 
 function DetalleArticulo() {
@@ -13,13 +16,12 @@ function DetalleArticulo() {
 const id = useParams();
 
 const [data,setData] = useState();
-const [productos,setProductos] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                `http://localhost:3001/articulos/${id.id}`,{
+                `https://afternoon-meadow-03259.herokuapp.com/articulos/${id.id}`,{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json'
@@ -35,7 +37,7 @@ const [productos,setProductos] = useState({});
             }
           };
           fetchData();
-       }, [])
+       }, [id])
 
        console.log(data)
 
@@ -49,22 +51,20 @@ const [productos,setProductos] = useState({});
         if(token){
             window.location = `https://wa.me/${data ? data.usuario.telefono : null}/?text=Hola,%20me%20gustaria%20contactar%20contigo%20por%20este%20articulo:%20${data ? data.nombreArticulo: null}%20${window.location}`
         } else {
-            alert("Debes iniciar sesión para contactarte con un vendedor.")
+            window.location.pathname = "/login"
         }
     }
 
   return (
     <div>
-        <Header/>
-        <div className='container m-2'>
+        {window.innerWidth < 1024? <Header/> : <HeaderDesktop/>}
+        <div className='article-detail-container'>
             <div className='row-cols-1 justify-content-start'>
                 <div className='col-5'>
                     <h3 className='text-bold'>{data ? data.nombreArticulo : "Cargando..."}</h3>
                 </div>
                 <div className='row'>
-                    <div className='col-1'>
-                        <img src={Ubicador} alt="search" className="search-icon"/>
-                    </div>
+                    
                     <div className='col-8'>
                         <p className='ph'>{data ? data.ubicacion.provincia + ", " + data.ubicacion.localidad : "Cargando..."}</p>
                     </div>
@@ -73,9 +73,7 @@ const [productos,setProductos] = useState({});
                     <ScrollImg imgURL={data ? data.imagen : "Cargando..."}/>
                 </div>
                 <div className='row justify-content-end'>
-                <div className='col-2 mt-3'>
-                    <img src={corazon} alt='favorito'/>
-                </div>
+              
                 </div>
                 <div className='row'>
                     <div className='col-9'>
@@ -99,7 +97,7 @@ const [productos,setProductos] = useState({});
                             <p className='price'><b>${data ? data.precio : "Cargando..."}</b></p>
                         </div>
                         <div className='col'>
-                            <button onClick={handleWhatsAppButton}>WhatsApp</button>
+                            <button onClick={handleWhatsAppButton} className="ws-button"><img className="ws-icon" src={WsIcon} />WhatsApp</button>
                         </div>
                     </div>
                 </div>

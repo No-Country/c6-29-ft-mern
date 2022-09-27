@@ -3,6 +3,7 @@ import SearchResults from "./SearchResults";
 import React, { useEffect, useState } from "react";
 import { render } from "@testing-library/react";
 import Header from "../header/Header";
+import HeaderDesktop from "../header/HeaderDesktop";
 
 export const SearchPage = () => {
     const localValue = window.localStorage.getItem("searchValue");
@@ -14,7 +15,7 @@ export const SearchPage = () => {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/articulos/buscarnombre/?buscar="+buscar,{
+                "https://afternoon-meadow-03259.herokuapp.com/articulos/buscarnombre/?buscar="+buscar,{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json',
@@ -42,19 +43,12 @@ export const SearchPage = () => {
       render(<SearchResults data={data}/>)
     }
 
-    const getLocalValue = () => {
-       const localValue = window.localStorage.getItem("searchValue");
-        const input = document.querySelector("[data-search-bar]")
-        console.log(input)
-        setTimeout(()=>{
-            input.value = localValue;
-        },400)
-    }
+  
     
     return(
     <div>
-        <Header/>
-        <Buscador buscar={buscar} showResults={showResults} handleBuscar={handleBuscar} />
+        {window.innerWidth < 1024? <Header/> : <HeaderDesktop/>}
+        {window.innerWidth < 1024? <Buscador buscar={buscar} showResults={showResults} handleBuscar={handleBuscar} /> : null}
         <SearchResults data={data}/>
     </div>
     )

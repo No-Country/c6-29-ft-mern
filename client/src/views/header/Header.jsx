@@ -24,12 +24,17 @@ import RegisterIcon from "../../img/burger-menu-icons/registro-icon.svg"
 const Header = () => {
     const token = localStorage.getItem("token");
     let userConnected;
-    if(token == "" || token == undefined || token == null){
+    if(token === "" || token === undefined || token == null){
         userConnected = false;
     } else {
         userConnected = true;
     }
-
+    const setSectionName = (e) =>{
+        localStorage.setItem("section",e.target.id);
+        if(window.location.pathname === "/sectionResults"){
+            window.location.reload()
+        }
+    }
 
     /// FUNCION QUE MUESTRA Y ANIMA EL MENU HAMBURGUESA
 
@@ -64,9 +69,9 @@ const Header = () => {
     
     return(
         <div className="header-container" data-header-container>
-            <img src={Bars} onClick={showNavMenu} alt="imagen" data-bars/>
+            <img src={Bars} onClick={showNavMenu} alt="imagen" id="bars-header" data-bars/>
             <Link to='/'><img src={GsLogo} alt="imagen" className="logo-principal"/></Link>       
-            <img src={UserLogo}  alt="imagen" data-profile/>
+            <Link to="/login" ><img src={UserLogo} className= "profile-icon" alt="imagen" data-profile ></img></Link>
             
             <div className="nav-menu__container" data-nav-menu>
                 <ul className="container__list">
@@ -75,25 +80,24 @@ const Header = () => {
                     <li className="list__items"><img className="items__icon" src={LoginIcon}/><Link to='/login'>Iniciar Sesión</Link></li>
                     <li className="list__items"><img className="items__icon" src={RegisterIcon}/><Link to= '/register'>Registrarse</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                     
+                    <li className="list__items" ><Link to='/sectionResults'onClick={setSectionName} id="recientes"><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    
+                    <li className="list__items"  onClick={setSectionName}><Link to='/sectionResults' id="donaciones"><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
                    </>
                    }
                    {userConnected &&
                    <>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HomeIcon}/>Inicio</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={HistoryIcon}/>Historial</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={OffersIcon}/>Ofertas</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
+                    
+                    <li className="list__items"><Link to='/sectionResults'onClick={setSectionName} id="recientes"><img className="items__icon" src={NewsIcon}/>Novedades</Link></li>
+                    
+                    <li className="list__items" onClick={setSectionName}><Link to='/sectionResults' id="donaciones"><img className="items__icon" src={DonacionesIcon}/>Donaciones</Link></li>
                     <li className="list__items"><Link to='/'><img className="items__icon" src={HelpIcon}/>Ayuda</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={FavIcon}/>Favoritos</Link></li>
+                    
                     <li className="list__items"><Link to='/publicar'><img className="items__icon" src={NewPubIcon}/>Crear publicación</Link></li>
-                    <li className="list__items"><Link to='/'><img className="items__icon" src={MyPubsIcon}/>Mis Publicaciones</Link></li>
+                    
                     <li className="list__items"><img className="items__icon" src={CloseSessionIcon} onClick={closeSession}/>Cerrar sesión</li>
                    </>
                     }   

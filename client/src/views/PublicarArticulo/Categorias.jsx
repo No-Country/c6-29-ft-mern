@@ -11,7 +11,7 @@ function Categorias ({getCategory}) {
         const fetchData = async () => {
             try {
               const response = await fetch(
-                "http://localhost:3001/categorias/",{
+                "https://afternoon-meadow-03259.herokuapp.com/categorias/",{
                   method:'GET',
                   headers: {
                     'Content-type': 'application/json'

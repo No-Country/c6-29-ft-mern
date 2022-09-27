@@ -5,7 +5,7 @@ import GsLogo from "../../img/gs-logo.png"
 import checkDone from "../../img/check.png"
 import returnButton from "../../img/return.svg"
 import { useState } from "react";
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import ilustracion from "../../img/ilustracion.png"
 
 const Register = () => {
@@ -32,7 +32,7 @@ const [doublePass,setDoublePass] = useState ("");
                 telefono: tel
             };    
                console.log(object)
-            const response = await fetch("http://localhost:3001/auth/registro", {
+            const response = await fetch("https://afternoon-meadow-03259.herokuapp.com/auth/registro", {
               method: "POST",
               headers: {
                 "Content-type": "application/json",
@@ -49,9 +49,8 @@ const [doublePass,setDoublePass] = useState ("");
     }    
 }
   
-const handleReturn = () => {
-    window.location.pathname = "/";
-}
+const navigate = useNavigate()
+
 
 // FUNCION PARA REDIRECCIONAR AL LOGIN Y MOSTRAR MENSAJE DE ARRIBO CORREO
     
@@ -78,8 +77,9 @@ return(
         
         <div className="login__functional">
     <div className="login__container" data-register-container>
+        
         <div className="login__logo-container">
-            <img src={returnButton} onClick={handleReturn} className="return-button" alt="" />
+        <img src={returnButton} onClick={() => navigate("-1")} className="return-button" alt="" />
             <img className="logo__item" src={GsLogo}/>
         </div>
         <h2 className="container__title">Creá tu <span>cuenta</span></h2>
